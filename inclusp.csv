@@ -1,0 +1,217 @@
+ano;fase;cor;inclusp;N
+2007;inscrito;branca;Inclusp;30537
+2007;inscrito;preta;Inclusp;4960
+2007;inscrito;amarela;Inclusp;1951
+2007;inscrito;parda;Inclusp;13877
+2007;inscrito;indígena;Inclusp;359
+2007;inscrito;NR;Inclusp;363
+2007;inscrito;branca;Não Inclusp;59769
+2007;inscrito;preta;Não Inclusp;1202
+2007;inscrito;amarela;Não Inclusp;5932
+2007;inscrito;parda;Não Inclusp;6097
+2007;inscrito;indígena;Não Inclusp;212
+2007;inscrito;NR;Não Inclusp;739
+2007;matriculado;branca;Inclusp;1878
+2007;matriculado;preta;Inclusp;140
+2007;matriculado;amarela;Inclusp;192
+2007;matriculado;parda;Inclusp;530
+2007;matriculado;indígena;Inclusp;17
+2007;matriculado;NR;Inclusp;31
+2007;matriculado;branca;Não Inclusp;5908
+2007;matriculado;preta;Não Inclusp;71
+2007;matriculado;amarela;Não Inclusp;780
+2007;matriculado;parda;Não Inclusp;603
+2007;matriculado;indígena;Não Inclusp;25
+2007;matriculado;NR;Não Inclusp;99
+2008;inscrito;branca;Inclusp;27103
+2008;inscrito;preta;Inclusp;4204
+2008;inscrito;amarela;Inclusp;1796
+2008;inscrito;parda;Inclusp;11797
+2008;inscrito;indígena;Inclusp;250
+2008;inscrito;NR;Inclusp;319
+2008;inscrito;branca;Não Inclusp;63092
+2008;inscrito;preta;Não Inclusp;1340
+2008;inscrito;amarela;Não Inclusp;5855
+2008;inscrito;parda;Não Inclusp;6734
+2008;inscrito;indígena;Não Inclusp;214
+2008;inscrito;NR;Não Inclusp;772
+2008;matriculado;branca;Inclusp;1843
+2008;matriculado;preta;Inclusp;119
+2008;matriculado;amarela;Inclusp;185
+2008;matriculado;parda;Inclusp;514
+2008;matriculado;indígena;Inclusp;11
+2008;matriculado;NR;Inclusp;20
+2008;matriculado;branca;Não Inclusp;6121
+2008;matriculado;preta;Não Inclusp;100
+2008;matriculado;amarela;Não Inclusp;708
+2008;matriculado;parda;Não Inclusp;668
+2008;matriculado;indígena;Não Inclusp;14
+2008;matriculado;NR;Não Inclusp;78
+2009;inscrito;branca;Inclusp;26017
+2009;inscrito;preta;Inclusp;3519
+2009;inscrito;amarela;Inclusp;1605
+2009;inscrito;parda;Inclusp;10500
+2009;inscrito;indígena;Inclusp;180
+2009;inscrito;NR;Inclusp;336
+2009;inscrito;branca;Não Inclusp;65263
+2009;inscrito;preta;Não Inclusp;1367
+2009;inscrito;amarela;Não Inclusp;5889
+2009;inscrito;parda;Não Inclusp;6787
+2009;inscrito;indígena;Não Inclusp;170
+2009;inscrito;NR;Não Inclusp;839
+2009;matriculado;branca;Inclusp;2147
+2009;matriculado;preta;Inclusp;178
+2009;matriculado;amarela;Inclusp;188
+2009;matriculado;parda;Inclusp;598
+2009;matriculado;indígena;Inclusp;8
+2009;matriculado;NR;Inclusp;29
+2009;matriculado;branca;Não Inclusp;5890
+2009;matriculado;preta;Não Inclusp;90
+2009;matriculado;amarela;Não Inclusp;695
+2009;matriculado;parda;Não Inclusp;601
+2009;matriculado;indígena;Não Inclusp;19
+2009;matriculado;NR;Não Inclusp;78
+2010;inscrito;branca;Inclusp;21107
+2010;inscrito;preta;Inclusp;2417
+2010;inscrito;amarela;Inclusp;1343
+2010;inscrito;parda;Inclusp;7503
+2010;inscrito;indígena;Inclusp;160
+2010;inscrito;NR;Inclusp;5
+2010;inscrito;branca;Não Inclusp;66701
+2010;inscrito;preta;Não Inclusp;1602
+2010;inscrito;amarela;Não Inclusp;5770
+2010;inscrito;parda;Não Inclusp;6924
+2010;inscrito;indígena;Não Inclusp;252
+2010;inscrito;NR;Não Inclusp;9
+2010;matriculado;branca;Inclusp;1813
+2010;matriculado;preta;Inclusp;119
+2010;matriculado;amarela;Inclusp;156
+2010;matriculado;parda;Inclusp;445
+2010;matriculado;indígena;Inclusp;7
+2010;matriculado;NR;Inclusp;0
+2010;matriculado;branca;Não Inclusp;6574
+2010;matriculado;preta;Não Inclusp;108
+2010;matriculado;amarela;Não Inclusp;717
+2010;matriculado;parda;Não Inclusp;637
+2010;matriculado;indígena;Não Inclusp;19
+2010;matriculado;NR;Não Inclusp;0
+2011;inscrito;branca;Inclusp;22452
+2011;inscrito;preta;Inclusp;2587
+2011;inscrito;amarela;Inclusp;1333
+2011;inscrito;parda;Inclusp;7629
+2011;inscrito;indígena;Inclusp;158
+2011;inscrito;NR;Inclusp;0
+2011;inscrito;branca;Não Inclusp;71773
+2011;inscrito;preta;Não Inclusp;1936
+2011;inscrito;amarela;Não Inclusp;5971
+2011;inscrito;parda;Não Inclusp;8123
+2011;inscrito;indígena;Não Inclusp;222
+2011;inscrito;NR;Não Inclusp;1
+2011;matriculado;branca;Inclusp;1734
+2011;matriculado;preta;Inclusp;176
+2011;matriculado;amarela;Inclusp;155
+2011;matriculado;parda;Inclusp;492
+2011;matriculado;indígena;Inclusp;9
+2011;matriculado;NR;Inclusp;0
+2011;matriculado;branca;Não Inclusp;6540
+2011;matriculado;preta;Não Inclusp;121
+2011;matriculado;amarela;Não Inclusp;711
+2011;matriculado;parda;Não Inclusp;624
+2011;matriculado;indígena;Não Inclusp;16
+2011;matriculado;NR;Não Inclusp;0
+2012;inscrito;branca;Inclusp;29563
+2012;inscrito;preta;Inclusp;3585
+2012;inscrito;amarela;Inclusp;1616
+2012;inscrito;parda;Inclusp;11141
+2012;inscrito;indígena;Inclusp;201
+2012;inscrito;NR;Inclusp;0
+2012;inscrito;branca;Não Inclusp;68005
+2012;inscrito;preta;Não Inclusp;1631
+2012;inscrito;amarela;Não Inclusp;5419
+2012;inscrito;parda;Não Inclusp;6754
+2012;inscrito;indígena;Não Inclusp;186
+2012;inscrito;NR;Não Inclusp;0
+2012;matriculado;branca;Inclusp;1990
+2012;matriculado;preta;Inclusp;161
+2012;matriculado;amarela;Inclusp;171
+2012;matriculado;parda;Inclusp;593
+2012;matriculado;indígena;Inclusp;7
+2012;matriculado;NR;Inclusp;0
+2012;matriculado;branca;Não Inclusp;6446
+2012;matriculado;preta;Não Inclusp;122
+2012;matriculado;amarela;Não Inclusp;646
+2012;matriculado;parda;Não Inclusp;612
+2012;matriculado;indígena;Não Inclusp;18
+2012;matriculado;NR;Não Inclusp;0
+2013;inscrito;branca;Inclusp;33441
+2013;inscrito;preta;Inclusp;4190
+2013;inscrito;amarela;Inclusp;1716
+2013;inscrito;parda;Inclusp;13714
+2013;inscrito;indígena;Inclusp;180
+2013;inscrito;NR;Inclusp;0
+2013;inscrito;branca;Não Inclusp;70616
+2013;inscrito;preta;Não Inclusp;1727
+2013;inscrito;amarela;Não Inclusp;5282
+2013;inscrito;parda;Não Inclusp;7092
+2013;inscrito;indígena;Não Inclusp;136
+2013;inscrito;NR;Não Inclusp;0
+2013;matriculado;branca;Inclusp;2036
+2013;matriculado;preta;Inclusp;136
+2013;matriculado;amarela;Inclusp;181
+2013;matriculado;parda;Inclusp;591
+2013;matriculado;indígena;Inclusp;9
+2013;matriculado;NR;Inclusp;0
+2013;matriculado;branca;Não Inclusp;6599
+2013;matriculado;preta;Não Inclusp;124
+2013;matriculado;amarela;Não Inclusp;637
+2013;matriculado;parda;Não Inclusp;651
+2013;matriculado;indígena;Não Inclusp;11
+2013;matriculado;NR;Não Inclusp;0
+2014;inscrito;branca;Inclusp;36439
+2014;inscrito;preta;Inclusp;5159
+2014;inscrito;amarela;Inclusp;1905
+2014;inscrito;parda;Inclusp;18492
+2014;inscrito;indígena;Inclusp;287
+2014;inscrito;NR;Inclusp;0
+2014;inscrito;branca;Não Inclusp;71425
+2014;inscrito;preta;Não Inclusp;1707
+2014;inscrito;amarela;Não Inclusp;5240
+2014;inscrito;parda;Não Inclusp;6850
+2014;inscrito;indígena;Não Inclusp;129
+2014;inscrito;NR;Não Inclusp;2
+2014;matriculado;branca;Inclusp;2271
+2014;matriculado;preta;Inclusp;225
+2014;matriculado;amarela;Inclusp;165
+2014;matriculado;parda;Inclusp;812
+2014;matriculado;indígena;Inclusp;8
+2014;matriculado;NR;Inclusp;0
+2014;matriculado;branca;Não Inclusp;6200
+2014;matriculado;preta;Não Inclusp;136
+2014;matriculado;amarela;Não Inclusp;571
+2014;matriculado;parda;Não Inclusp;713
+2014;matriculado;indígena;Não Inclusp;10
+2014;matriculado;NR;Não Inclusp;0
+2015;inscrito;branca;Inclusp;25099
+2015;inscrito;preta;Inclusp;3350
+2015;inscrito;amarela;Inclusp;1498
+2015;inscrito;parda;Inclusp;11928
+2015;inscrito;indígena;Inclusp;217
+2015;inscrito;NR;Inclusp;0
+2015;inscrito;branca;Não Inclusp;68417
+2015;inscrito;preta;Não Inclusp;2102
+2015;inscrito;amarela;Não Inclusp;5013
+2015;inscrito;parda;Não Inclusp;9131
+2015;inscrito;indígena;Não Inclusp;222
+2015;inscrito;NR;Não Inclusp;1
+2015;matriculado;branca;Inclusp;2431
+2015;matriculado;preta;Inclusp;267
+2015;matriculado;amarela;Inclusp;200
+2015;matriculado;parda;Inclusp;962
+2015;matriculado;indígena;Inclusp;14
+2015;matriculado;NR;Inclusp;0
+2015;matriculado;branca;Não Inclusp;5851
+2015;matriculado;preta;Não Inclusp;124
+2015;matriculado;amarela;Não Inclusp;533
+2015;matriculado;parda;Não Inclusp;680
+2015;matriculado;indígena;Não Inclusp;18
+2015;matriculado;NR;Não Inclusp;0

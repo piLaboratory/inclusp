@@ -1,0 +1,260 @@
+---
+title: "Cotas para escola pública na USP e inclusão racial - Subsídios para a Congregação do IBUSP"
+author: "Paulo Inácio Prado (Depto de Ecologia, IBUSP)"
+date: "`r format(Sys.time(), '%d de %B de %Y')`"
+output:
+  html_document:
+    fig_width: 12
+    fig_height: 6
+    toc: true
+    theme: united
+  pdf_document:
+    fig_width: 12
+    fig_height: 6
+    highlight: zenburn
+---
+
+
+```{r setOptions, include=FALSE, message=FALSE}
+library(rmarkdown)
+library(knitr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(Hmisc)
+```
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE)
+```
+
+# Contextualização
+
+Em 2013 a USP estabeleceu em seu  Plano Institucional [^1] as seguintes metas para 2018:
+
+>"I- 50% (cinquenta por cento) dos alunos matriculados em cada curso e em cada turno tendo cursado integralmente o ensino médio em escolas públicas;
+
+>II – dentro desses 50% (cinquenta por cento) de matriculados oriundos de escolas públicas, o percentual de pretos, pardos e indígenas deverá atingir aquele verificado pelo último censo demográfico do IBGE."
+
+>O Programa de inclusão social da USP (INCLUSP) iniciou-se em 2007, concedendo bônus de 3% nas notas das duas fase dos vestibular para candidatos que cursaram todo ensino médio em escolas públicas.Nos anos seguintes critérios e valores de bônus foram gradativamente aumentados."
+
+A partir do vestibular de 2014
+foi incluído um bônus adicional de 5% aos candidatos de escolas públicas 
+que se auto-identificarem como "pretos, pardos ou indígenas" (PPI).
+
+A FUVEST disponibiliza em seu site 
+os resultados de sua pesquisa de perfil sócio-econômico dos
+candidatos, convocados e matriculados. 
+A partir do ano de 2000 a pesquisa
+pergunta a raça/cor dos candidatos, com as opções "branca", "preta", "parda", "amarela", "indígena".
+Os dados sobre aprovados e matriculados do vestibular de 2016 ainda não estão disponíveis.
+
+# Progresso das metas desde sua proposição
+
+De acordo com o censo demográfico de 2010, as pessoas que se declaram como PPI representam 36,7% da
+população do estado de São Paulo e 55,2% da população brasileira.
+
+
+De acordo com o site da FUVEST e anuário da USP:
+
+* Entre os que se matricularam de 2010 a 2015, 27,5% dos que optaram pelo INCLUSP[^2] se declararam PPI.
+
+* Entre os matriculados que optaram pelo INCLUSP , 32,1%  se declararam PPI em 2015. 
+Este percentual foi de 30% em 2014 e de 24,7% em 2013.
+
+* Entre os que se matricularam de 2010 a 2015, 25% cursaram integralmente o ensino médio em escolas públicas.
+
+* 34,8% dos matriculados do vestibular de 2015 
+cursaram integralmente o ensino médio em escolas públicas. Este percentual foi de 32,2% em 2014 e de 27,8% em 2013.
+
+
+## Probabilidade de ingresso na USP
+
+Os gráficos a seguir comparam a proporção de matriculados após a última chamada
+em relação ao número de inscritos em relação à origem escolar e raça.
+Os dados foram obtidos do site da FUVEST e do anuário da USP. Os dados estão agregados
+em três períodos:
+
+* Antes da criação do INCLUSP: 2000 - 2006
+* Antes inclusão de bônus racial no INCLUSP: 2007-2013
+* Após inclusão de bônus racial no INCLUSP: 2014-2015
+
+### Probabilidade de ingresso de oriundos da escola particular e pública
+
+O gráfico mostra a proporção matriculados/inscritos para candidatos que cursaram
+o ensino médio integralmente em escola pública ou não, em cada período. 
+As barras são intervalos de confiança. Os traços pretos indicam a relação
+candidato/vaga de cada vestibular.  Se houvesse igualdade de condições 
+todas as proporções deveriam convergir para estes valores. 
+
+```{r escola publica x privada}
+## leitura dos dados
+ep <- read.csv2("ensino_medio.csv", as.is=TRUE)
+## Relacao candidato/vaga
+ep.cv <- filter(ep, ano>1999) %>%
+    spread(fase, n.anuario) %>%
+    mutate(periodo=cut(ano, breaks=c(1999,2006,2013,2015),
+                       labels=c("Antes Inclusp", "Inclusp sem bônus PPI", "Inclusp bônus PPI"))) %>%
+    group_by(periodo) %>%
+    summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
+    mutate(p.matr = matr/inscr)
+## Calculo das proporcoes
+ep.ad <- filter(ep, ano>1999, ensino.medio!="outros"&ensino.medio!="supletivo") %>%
+    mutate(medio=ifelse(ensino.medio=="publica","Escola Pública", "Escola Particular"))%>%
+    spread(fase, n.anuario) %>%
+    mutate(periodo=cut(ano, breaks=c(1999,2006,2013,2015),
+                       labels=c("Antes Inclusp", "Inclusp sem bônus PPI", "Inclusp bônus PPI"))) %>%
+    group_by(periodo, medio) %>%
+    summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
+    mutate(p.matr = matr/inscr)
+## Adiciona intervalos de confiança
+ep.ad$ic.low <- binconf(ep.ad$matr, ep.ad$inscr, method="exact")[,2]
+ep.ad$ic.up <- binconf(ep.ad$matr, ep.ad$inscr, method="exact")[,3]
+## Grafico
+p3 <- ggplot(ep.ad, aes(periodo, p.matr))
+p3 + geom_point(aes(colour=medio), size=4) +
+    geom_linerange(aes(ymin=ic.low, ymax=ic.up, colour=medio), size=3, alpha=0.3) +
+    scale_colour_discrete(name="Ensino médio") +
+    theme_bw() +
+    theme(axis.text= element_text(size=15),
+          axis.title= element_text(size=17),
+          strip.text.x = element_text(size=20),
+          legend.text=element_text(size=14)) +
+    labs(y="Razão Matriculados/Inscritos", x="") +
+    annotate("segment", x=c(0.9,1.9, 2.9), xend=c(1.1,2.1,3.1),y=ep.cv$p.matr, yend=ep.cv$p.matr)
+```
+
+Antes da criação do INCLUSP, candidatos oriundos de escolas particulares tinha o dobro de chance de 
+ingressar na USP. A desigualdade foi reduzida com o INCLUSP, especialmente após 2013, quando
+houve aumento nos valores dos bônus e inclusão de bônus racial. Ainda assim, a propabilidade
+de um candidato de escola particular ingressar foi 
+`round(r with(subset(ep.ad, periodo=="Inclusp bônus PPI"), p.matr[1]/p.matr[2]),1)` 
+vezes maior do que de um candidato oriundo do ensino público entre 2013 e 2015.
+
+
+### Probabilidade de ingresso de candidatos PPI
+
+```{r PPI x brancos}
+## Leitura dos dados
+cor <- read.csv2("cor.csv", as.is=TRUE)
+cor$cor <- factor(cor$cor, levels=c("preta", "parda", "indígena", "amarela", "branca", "NR" ))
+crit <- cor$cor=="preta"|cor$cor=="parda"|cor$cor=="indígena"
+cor$ppi <- NA
+cor$ppi[crit] <- "ppi"
+cor$ppi[!crit] <- "no.ppi"
+## Relacao candidato/vaga
+cor.cv <- select(cor, ano, cor, fase,n.fuvest) %>%
+    spread(fase, n.fuvest) %>%
+    mutate(periodo=cut(ano, breaks=c(1999,2006,2013,2015),
+                       labels=c("Antes Inclusp", "Inclusp sem bônus PPI", "Inclusp bônus PPI"))) %>%
+    group_by(periodo) %>%
+    summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
+    mutate(p.matr = matr/inscr)
+## Calculo das proporcoes
+cor.ad <- filter(cor, cor!="NR"&cor!="amarela"&fase!="convocado") %>%
+    select(ano:cor,n.fuvest,ppi) %>%
+    spread(fase, n.fuvest) %>%
+    mutate(periodo=cut(ano, breaks=c(1999,2006,2013,2015),
+                       labels=c("Antes Inclusp", "Inclusp sem bônus PPI", "Inclusp bônus PPI"))) %>%
+    group_by(periodo, ppi) %>%
+    summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
+    mutate(p.matr = matr/inscr, raca = ifelse(ppi=="ppi","PPI", "Brancos"))
+## Intervalos de confiança
+cor.ad$ic.low <- binconf(cor.ad$matr, cor.ad$inscr, method="exact")[,2]
+cor.ad$ic.up <- binconf(cor.ad$matr, cor.ad$inscr, method="exact")[,3]
+```
+
+O gráfico a seguir mostra as proporções  matriculados/inscritos para
+candidatos PPI e brancos, nos três períodos. No período 2000-2007, anterior
+à criação do INCLUSP, a probabilidade de um candidato branco
+ingressar era `r round(with(subset(cor.ad, periodo=="Antes Inclusp"), p.matr[1]/p.matr[2]),1)`
+vezes maior do que de um candidato PPI. Novamente, a desigualdade se reduziu após
+a criação do INCLUSP, e ainda mais a partir da inclusão do bônus racial.
+Mesmo assim, a chance de um candidato branco ingressar é 
+`r round(with(subset(cor.ad, periodo=="Inclusp bônus PPI"), p.matr[1]/p.matr[2]),1)`
+vez maior do que de um candidato PPI.
+
+```{r grafico raça}
+## Grafico
+p2 <- ggplot(cor.ad, aes(periodo, p.matr))
+p2 + geom_point(aes(colour=raca), size=4) +
+    geom_linerange(aes(ymin=ic.low, ymax=ic.up, colour=raca), size=3, alpha=0.3) +
+    scale_colour_discrete(name="Grupo Racial") +
+    theme_bw() +
+    theme(axis.text= element_text(size=15),
+          axis.title= element_text(size=17),
+          strip.text.x = element_text(size=20),
+          legend.text=element_text(size=14)) +
+    labs(y="Razão Matriculados/Inscritos", x="") +
+    annotate("segment", x=c(0.9,1.9, 2.9), xend=c(1.1,2.1,3.1),y=cor.cv$p.matr, yend=cor.cv$p.matr)
+```
+
+## INCLUSP e inclusão racial
+
+O último gráfico mostra a proporção matriculados/ingressantes de candidatos PPI e brancos,
+dentro e fora do INCLUSP. A comparação foi feita entre os períodos em que
+programa não tinha bônus racial (2007-2013) e após a inclusão deste bônus (2014-2015).
+
+```{r comparacao racial com e sem inclusp}
+
+##leitura dos dados
+incl <- read.csv2("inclusp.csv", as.is=TRUE)
+incl$cor <- factor(incl$cor, levels=c("preta", "parda", "indígena", "amarela", "branca", "NR" ))
+incl$inclusp <- factor(incl$inclusp, levels=c("Inclusp", "Não Inclusp" ))
+crit <- incl$cor=="preta"|incl$cor=="parda"|incl$cor=="indígena"
+incl$ppi <- NA
+incl$ppi[crit] <- "ppi"
+incl$ppi[!crit] <- "no.ppi"
+## Relacao candidato/vaga
+incl.cv <- spread(incl, fase, N) %>%
+    mutate(periodo=cut(ano, breaks=c(2006,2013,2015), labels=c("Antes bônus PPI", "Após Bônus PPI"))) %>%
+    group_by(periodo) %>%
+    summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
+    mutate(p.matr = matr/inscr)
+## Razao matriculados/inscritos
+incl.ad <- filter(incl, cor!="NR"&cor!="amarela") %>%
+    spread(fase, N) %>%
+    mutate(periodo=cut(ano, breaks=c(2006,2013,2015), labels=c("Antes bônus PPI", "Após Bônus PPI"))) %>%
+    group_by(periodo, inclusp, ppi) %>%
+    summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
+    mutate(p.matr = matr/inscr, raca = ifelse(ppi=="ppi","PPI", "Brancos"))
+## Intervalos de confiança
+incl.ad$ic.low <- binconf(incl.ad$matr, incl.ad$inscr, method="exact")[,2]
+incl.ad$ic.up <- binconf(incl.ad$matr, incl.ad$inscr, method="exact")[,3]
+## Gafico
+p1 <- ggplot(incl.ad, aes(periodo, p.matr))
+p1 + geom_point(aes(colour=raca), size=4) +
+    facet_grid(~inclusp) +
+    geom_linerange(aes(ymin=ic.low, ymax=ic.up, colour=raca), size=3, alpha=0.3) +
+    scale_colour_discrete(name="Grupo Racial") +
+    theme_bw() +
+    theme(axis.text= element_text(size=15),
+          axis.title= element_text(size=17),
+          strip.text.x = element_text(size=20),
+          legend.text=element_text(size=14)) +
+    labs(y="Razão Matriculados/Inscritos", x="") +
+    annotate("segment", x=c(0.9,1.9), xend=c(1.1,2.1),y=incl.cv$p.matr, yend=incl.cv$p.matr)
+```
+
+Mesmo com o bônus, os candidatos INCLUSP tiveram menor probabilidade de ingresso. 
+Mais importante, a 
+desigualdade racial é maior no grupo de candidatos que aderiram ao
+INCLUSP. O bônus racial de 5% reduziu um pouco essa desigualdade, 
+mas os candidatos PPI oriundos de escola pública são ainda o grupo com menor
+probabilidade de ingresso. 
+
+Portanto, inclusão sócio-econômica não é capaz de reduzir desigualdades raciais,
+porque essas desigualdades estão presentes em todos os estratos sócio-econômicos.
+No caso em análise, o quadro é ainda pior, pois as desigualdades raciais se acentuam 
+justo no estrato mais carente.
+
+
+## Fonte de dados
+
+Os dados de raça declarada foram obtidos do site da FUVEST (http://www.fuvest.br/, seção "Estatísticas" > "Questionário de Avaliação Sócio-Econômica"), usando os agrupamentos "Total carreiras USP" e "Candidatos que optaram pelo Inclusp". 
+Os dados de onde os candidatos curasaram o ensino médio foram retirados do anuário da USP (https://uspdigital.usp.br/anuario/).
+
+As planilhas, códigos R e fonte deste documento estão no repositório público .
+
+[^1]: RESOLUÇÃO Nº 6583, DE 4 DE JULHO DE 2013, http://www.leginf.usp.br/?resolucao=resolucao-no-6583-de-4-de-julho-de-2013
+
+[^2]: Os dados divulgados não permitem cruzar diretamente a pergunta sobre raça e onde cursou o ensino médio. No entanto, estão disponíveis os dados sobre raça dos optantes pelo Inclusp. Para optar pelo Inclusp é preciso ter cursado o ensino médio integralmente eme scola pública. É possível que alguns candidatos com este perfil não tenham se inscrito no Inclusp, mas dadas as vantagens de se inscerevr isso não deve alterar muito os resultados.

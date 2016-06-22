@@ -1,0 +1,574 @@
+ano;fase;ensino.medio;n.anuario
+1987;inscrito;publica;41465
+1987;inscrito;particular;48863
+1987;inscrito;supletivo;3591
+1987;inscrito;maior parte pub;41144
+1987;inscrito;maior parte part;5052
+1987;inscrito;outros;1471
+1987;chamado;publica;2078
+1987;chamado;particular;3979
+1987;chamado;supletivo;51
+1987;chamado;maior parte pub;249
+1987;chamado;maior parte part;290
+1987;chamado;outros;80
+1988;inscrito;publica;14531
+1988;inscrito;particular;19617
+1988;inscrito;supletivo;1695
+1988;inscrito;maior parte pub;1541
+1988;inscrito;maior parte part;1892
+1988;inscrito;outros;141
+1988;chamado;publica;968
+1988;chamado;particular;1843
+1988;chamado;supletivo;36
+1988;chamado;maior parte pub;118
+1988;chamado;maior parte part;118
+1988;chamado;outros;4
+1989;inscrito;publica;31601
+1989;inscrito;particular;50685
+1989;inscrito;supletivo;2320
+1989;inscrito;maior parte pub;4341
+1989;inscrito;maior parte part;5187
+1989;inscrito;outros;373
+1989;chamado;publica;2006
+1989;chamado;particular;4869
+1989;chamado;supletivo;46
+1989;chamado;maior parte pub;290
+1989;chamado;maior parte part;295
+1989;chamado;outros;15
+1990;inscrito;publica;31717
+1990;inscrito;particular;54700
+1990;inscrito;supletivo;2219
+1990;inscrito;maior parte pub;4756
+1990;inscrito;maior parte part;5326
+1990;inscrito;outros;341
+1990;chamado;publica;1781
+1990;chamado;particular;4935
+1990;chamado;supletivo;27
+1990;chamado;maior parte pub;311
+1990;chamado;maior parte part;351
+1990;chamado;outros;8
+1991;inscrito;publica;38947
+1991;inscrito;particular;60273
+1991;inscrito;supletivo;2446
+1991;inscrito;maior parte pub;5864
+1991;inscrito;maior parte part;6003
+1991;inscrito;meia publica;2598
+1991;inscrito;outros;546
+1991;chamado;publica;10858
+1991;chamado;particular;23308
+1991;chamado;supletivo;495
+1991;chamado;maior parte pub;1731
+1991;chamado;maior parte part;1908
+1991;chamado;meia publica;648
+1991;chamado;outros;157
+1991;matriculado;publica;2140
+1991;matriculado;particular;4768
+1991;matriculado;supletivo;42
+1991;matriculado;maior parte pub;298
+1991;matriculado;maior parte part;387
+1991;matriculado;meia publica;79
+1991;matriculado;outros;39
+1992;inscrito;outros;473
+1992;inscrito;publica;32873
+1992;inscrito;particular;50632
+1992;inscrito;supletivo;2172
+1992;inscrito;maior parte pub;4572
+1992;inscrito;maior parte part;4890
+1992;inscrito;meia publica;2117
+1992;chamado;outros;164
+1992;chamado;publica;10630
+1992;chamado;particular;16916
+1992;chamado;supletivo;701
+1992;chamado;maior parte pub;1499
+1992;chamado;maior parte part;1598
+1992;chamado;meia publica;677
+1992;matriculado;outros;46
+1992;matriculado;publica;2490
+1992;matriculado;particular;4342
+1992;matriculado;supletivo;177
+1992;matriculado;maior parte pub;347
+1992;matriculado;maior parte part;396
+1992;matriculado;meia publica;144
+1993;inscrito;outros;602
+1993;inscrito;publica;32429
+1993;inscrito;particular;52799
+1993;inscrito;supletivo;1769
+1993;inscrito;maior parte pub;4802
+1993;inscrito;maior parte part;5409
+1993;inscrito;meia publica;1767
+1993;chamado;outros;185
+1993;chamado;publica;9963
+1993;chamado;particular;18909
+1993;chamado;supletivo;476
+1993;chamado;maior parte pub;1554
+1993;chamado;maior parte part;1794
+1993;chamado;meia publica;447
+1993;matriculado;outros;41
+1993;matriculado;publica;2153
+1993;matriculado;particular;5055
+1993;matriculado;supletivo;37
+1993;matriculado;maior parte pub;328
+1993;matriculado;maior parte part;398
+1993;matriculado;meia publica;67
+1994;inscrito;outros;2721
+1994;inscrito;publica;27969
+1994;inscrito;particular;46419
+1994;inscrito;supletivo;1189
+1994;inscrito;maior parte pub;3865
+1994;inscrito;maior parte part;5092
+1994;inscrito;meia publica;1798
+1994;chamado;outros;641
+1994;chamado;publica;5373
+1994;chamado;particular;15612
+1994;chamado;supletivo;141
+1994;chamado;maior parte pub;803
+1994;chamado;maior parte part;1335
+1994;chamado;meia publica;278
+1994;matriculado;outros;174
+1994;matriculado;publica;1375
+1994;matriculado;particular;4614
+1994;matriculado;supletivo;26
+1994;matriculado;maior parte pub;193
+1994;matriculado;maior parte part;315
+1994;matriculado;meia publica;69
+1995;inscrito;outros;0
+1995;inscrito;publica;30314
+1995;inscrito;particular;38886
+1995;inscrito;supletivo;1002
+1995;inscrito;maior parte pub;4201
+1995;inscrito;maior parte part;4003
+1995;inscrito;meia publica;1201
+1995;chamado;outros;0
+1995;chamado;publica;5096
+1995;chamado;particular;16158
+1995;chamado;maior parte pub;957
+1995;chamado;maior parte part;1011
+1995;chamado;meia publica;192
+1995;chamado;supletivo;93
+1995;matriculado;outros;0
+1995;matriculado;publica;1879
+1995;matriculado;particular;5195
+1995;matriculado;maior parte pub;325
+1995;matriculado;maior parte part;313
+1995;matriculado;meia publica;61
+1995;matriculado;supletivo;36
+1996;inscrito;publica;23113
+1996;inscrito;particular;28110
+1996;inscrito;maior parte pub;2855
+1996;inscrito;maior parte part;3152
+1996;inscrito;meia publica;721
+1996;inscrito;supletivo;589
+1996;inscrito;outros;28025
+1996;chamado;publica;3490
+1996;chamado;particular;8443
+1996;chamado;maior parte pub;522
+1996;chamado;maior parte part;597
+1996;chamado;meia publica;98
+1996;chamado;supletivo;59
+1996;chamado;outros;5469
+1996;matriculado;publica;1598
+1996;matriculado;particular;3628
+1996;matriculado;maior parte pub;228
+1996;matriculado;maior parte part;260
+1996;matriculado;meia publica;33
+1996;matriculado;supletivo;32
+1996;matriculado;outros;2305
+1997;inscrito;publica;33604
+1997;inscrito;particular;53810
+1997;inscrito;maior parte pub;3507
+1997;inscrito;maior parte part;4443
+1997;inscrito;meia publica;1315
+1997;inscrito;supletivo;1081
+1997;inscrito;outros;1944
+1997;chamado;publica;3844
+1997;chamado;particular;11203
+1997;chamado;maior parte pub;469
+1997;chamado;maior parte part;649
+1997;chamado;meia publica;130
+1997;chamado;supletivo;81
+1997;chamado;outros;422
+1997;matriculado;publica;1651
+1997;matriculado;particular;4428
+1997;matriculado;maior parte pub;186
+1997;matriculado;maior parte part;269
+1997;matriculado;meia publica;54
+1997;matriculado;supletivo;39
+1997;matriculado;outros;189
+1998;inscrito;publica;34540
+1998;inscrito;particular;57764
+1998;inscrito;maior parte pub;3042
+1998;inscrito;maior parte part;4138
+1998;inscrito;meia publica;1267
+1998;inscrito;supletivo;1084
+1998;inscrito;outros;3206
+1998;chamado;publica;4493
+1998;chamado;particular;12897
+1998;chamado;maior parte pub;483
+1998;chamado;maior parte part;720
+1998;chamado;meia publica;142
+1998;chamado;supletivo;112
+1998;chamado;outros;550
+1998;matriculado;publica;1794
+1998;matriculado;particular;4974
+1998;matriculado;maior parte pub;182
+1998;matriculado;maior parte part;255
+1998;matriculado;meia publica;45
+1998;matriculado;supletivo;52
+1998;matriculado;outros;208
+1999;inscrito;publica;33519
+1999;inscrito;particular;59847
+1999;inscrito;maior parte pub;3178
+1999;inscrito;maior parte part;3936
+1999;inscrito;meia publica;1208
+1999;inscrito;supletivo;980
+1999;inscrito;outros;1285
+1999;chamado;publica;4293
+1999;chamado;particular;13301
+1999;chamado;maior parte pub;482
+1999;chamado;maior parte part;689
+1999;chamado;meia publica;129
+1999;chamado;supletivo;84
+1999;chamado;outros;292
+1999;matriculado;publica;1779
+1999;matriculado;particular;5175
+1999;matriculado;maior parte pub;192
+1999;matriculado;maior parte part;280
+1999;matriculado;meia publica;49
+1999;matriculado;supletivo;30
+1999;matriculado;outros;135
+2000;inscrito;publica;41495
+2000;inscrito;particular;68482
+2000;inscrito;maior parte pub;3689
+2000;inscrito;maior parte part;4596
+2000;inscrito;meia publica;1346
+2000;inscrito;supletivo;1509
+2000;inscrito;outros;263
+2000;chamado;publica;4898
+2000;chamado;particular;14429
+2000;chamado;maior parte pub;510
+2000;chamado;maior parte part;725
+2000;chamado;meia publica;121
+2000;chamado;supletivo;102
+2000;chamado;outros;55
+2000;matriculado;publica;1721
+2000;matriculado;particular;5235
+2000;matriculado;maior parte pub;153
+2000;matriculado;maior parte part;221
+2000;matriculado;meia publica;44
+2000;matriculado;supletivo;31
+2000;matriculado;outros;25
+2001;inscrito;publica;41495
+2001;inscrito;particular;68482
+2001;inscrito;maior parte pub;3689
+2001;inscrito;maior parte part;4596
+2001;inscrito;meia publica;1346
+2001;inscrito;supletivo;1509
+2001;inscrito;outros;263
+2001;chamado;publica;4898
+2001;chamado;particular;14429
+2001;chamado;maior parte pub;510
+2001;chamado;maior parte part;725
+2001;chamado;meia publica;121
+2001;chamado;supletivo;102
+2001;chamado;outros;55
+2001;matriculado;publica;1721
+2001;matriculado;particular;5235
+2001;matriculado;maior parte pub;153
+2001;matriculado;maior parte part;221
+2001;matriculado;meia publica;44
+2001;matriculado;supletivo;31
+2001;matriculado;outros;25
+2002;inscrito;publica;45665
+2002;inscrito;particular;64754
+2002;inscrito;maior parte pub;3816
+2002;inscrito;maior parte part;4263
+2002;inscrito;meia publica;1252
+2002;inscrito;supletivo;1487
+2002;inscrito;outros;243
+2002;chamado;publica;5870
+2002;chamado;particular;14650
+2002;chamado;maior parte pub;554
+2002;chamado;maior parte part;723
+2002;chamado;meia publica;138
+2002;chamado;supletivo;139
+2002;chamado;outros;55
+2002;matriculado;publica;1950
+2002;matriculado;particular;5517
+2002;matriculado;maior parte pub;187
+2002;matriculado;maior parte part;229
+2002;matriculado;meia publica;40
+2002;matriculado;supletivo;44
+2002;matriculado;outros;25
+2003;inscrito;publica;51664
+2003;inscrito;particular;69919
+2003;inscrito;maior parte pub;3976
+2003;inscrito;maior parte part;4658
+2003;inscrito;meia publica;1339
+2003;inscrito;supletivo;1791
+2003;inscrito;outros;418
+2003;chamado;publica;6597
+2003;chamado;particular;15051
+2003;chamado;maior parte pub;607
+2003;chamado;maior parte part;792
+2003;chamado;meia publica;135
+2003;chamado;supletivo;139
+2003;chamado;outros;74
+2003;matriculado;publica;2188
+2003;matriculado;particular;5782
+2003;matriculado;maior parte pub;198
+2003;matriculado;maior parte part;271
+2003;matriculado;meia publica;31
+2003;matriculado;supletivo;36
+2003;matriculado;outros;28
+2004;inscrito;publica;54083
+2004;inscrito;particular;56968
+2004;inscrito;maior parte pub;8457
+2004;inscrito;maior parte part;9677
+2004;inscrito;meia publica;4522
+2004;inscrito;supletivo;417
+2004;inscrito;outros;244
+2004;chamado;publica;7214
+2004;chamado;particular;13466
+2004;chamado;maior parte pub;1547
+2004;chamado;maior parte part;2060
+2004;chamado;meia publica;881
+2004;chamado;supletivo;27
+2004;chamado;outros;52
+2004;matriculado;publica;2127
+2004;matriculado;particular;5053
+2004;matriculado;maior parte pub;529
+2004;matriculado;maior parte part;695
+2004;matriculado;meia publica;299
+2004;matriculado;supletivo;4
+2004;matriculado;outros;23
+2005;inscrito;publica;57416
+2005;inscrito;particular;68315
+2005;inscrito;maior parte pub;3207
+2005;inscrito;maior parte part;3897
+2005;inscrito;meia publica;840
+2005;inscrito;supletivo;1875
+2005;inscrito;outros;270
+2005;chamado;publica;7615
+2005;chamado;particular;17386
+2005;chamado;maior parte pub;578
+2005;chamado;maior parte part;734
+2005;chamado;meia publica;116
+2005;chamado;supletivo;200
+2005;chamado;outros;60
+2005;matriculado;publica;2450
+2005;matriculado;particular;6625
+2005;matriculado;maior parte pub;187
+2005;matriculado;maior parte part;240
+2005;matriculado;meia publica;36
+2005;matriculado;supletivo;61
+2005;matriculado;outros;23
+2006;inscrito;publica;68930
+2006;inscrito;particular;72405
+2006;inscrito;maior parte pub;3346
+2006;inscrito;maior parte part;4027
+2006;inscrito;meia publica;955
+2006;inscrito;supletivo;1992
+2006;inscrito;outros;284
+2006;chamado;publica;6923
+2006;chamado;particular;18178
+2006;chamado;maior parte pub;568
+2006;chamado;maior parte part;760
+2006;chamado;meia publica;131
+2006;chamado;supletivo;168
+2006;chamado;outros;60
+2006;matriculado;publica;2374
+2006;matriculado;particular;7001
+2006;matriculado;maior parte pub;221
+2006;matriculado;maior parte part;274
+2006;matriculado;meia publica;50
+2006;matriculado;supletivo;54
+2006;matriculado;outros;21
+2007;inscrito;publica;48078
+2007;inscrito;particular;69013
+2007;inscrito;maior parte pub;2434
+2007;inscrito;maior parte part;3488
+2007;inscrito;meia publica;540
+2007;inscrito;supletivo;1091
+2007;inscrito;outros;685
+2007;chamado;publica;9986
+2007;chamado;particular;21301
+2007;chamado;maior parte pub;637
+2007;chamado;maior parte part;978
+2007;chamado;meia publica;114
+2007;chamado;supletivo;158
+2007;chamado;outros;163
+2007;matriculado;publica;2678
+2007;matriculado;particular;7016
+2007;matriculado;maior parte pub;171
+2007;matriculado;maior parte part;262
+2007;matriculado;meia publica;31
+2007;matriculado;supletivo;30
+2007;matriculado;outros;45
+2008;inscrito;publica;41872
+2008;inscrito;particular;71503
+2008;inscrito;maior parte pub;1371
+2008;inscrito;maior parte part;4119
+2008;inscrito;meia publica;2353
+2008;inscrito;supletivo;704
+2008;inscrito;outros;743
+2008;chamado;publica;9046
+2008;chamado;particular;21810
+2008;chamado;maior parte pub;752
+2008;chamado;maior parte part;1121
+2008;chamado;meia publica;601
+2008;chamado;supletivo;162
+2008;chamado;outros;168
+2008;matriculado;publica;2275
+2008;matriculado;particular;7123
+2008;matriculado;maior parte pub;352
+2008;matriculado;maior parte part;317
+2008;matriculado;meia publica;185
+2008;matriculado;supletivo;41
+2008;matriculado;outros;61
+2009;inscrito;publica;40863
+2009;inscrito;particular;73033
+2009;inscrito;maior parte pub;2256
+2009;inscrito;maior parte part;3969
+2009;inscrito;meia publica;604
+2009;inscrito;supletivo;0
+2009;inscrito;outros;810
+2009;chamado;publica;10839
+2009;chamado;particular;22737
+2009;chamado;maior parte pub;635
+2009;chamado;maior parte part;1127
+2009;chamado;meia publica;126
+2009;chamado;supletivo;0
+2009;chamado;outros;212
+2009;matriculado;publica;3101
+2009;matriculado;particular;6943
+2009;matriculado;maior parte pub;158
+2009;matriculado;maior parte part;304
+2009;matriculado;meia publica;20
+2009;matriculado;supletivo;0
+2009;matriculado;outros;65
+2010;inscrito;publica;33329
+2010;inscrito;particular;72903
+2010;inscrito;maior parte pub;2014
+2010;inscrito;maior parte part;4534
+2010;inscrito;meia publica;636
+2010;inscrito;supletivo;0
+2010;inscrito;outros;327
+2010;chamado;publica;9867
+2010;chamado;particular;23198
+2010;chamado;maior parte pub;565
+2010;chamado;maior parte part;1332
+2010;chamado;meia publica;162
+2010;chamado;supletivo;0
+2010;chamado;outros;77
+2010;matriculado;publica;2567
+2010;matriculado;particular;7560
+2010;matriculado;maior parte pub;163
+2010;matriculado;maior parte part;372
+2010;matriculado;meia publica;35
+2010;matriculado;supletivo;0
+2010;matriculado;outros;25
+2011;inscrito;publica;37099
+2011;inscrito;particular;77439
+2011;inscrito;maior parte pub;2032
+2011;inscrito;maior parte part;4661
+2011;inscrito;meia publica;571
+2011;inscrito;supletivo;0
+2011;inscrito;outros;324
+2011;chamado;publica;10044
+2011;chamado;particular;23626
+2011;chamado;maior parte pub;567
+2011;chamado;maior parte part;1316
+2011;chamado;meia publica;114
+2011;chamado;supletivo;0
+2011;chamado;outros;98
+2011;matriculado;publica;2533
+2011;matriculado;particular;7635
+2011;matriculado;maior parte pub;153
+2011;matriculado;maior parte part;384
+2011;matriculado;meia publica;25
+2011;matriculado;supletivo;0
+2011;matriculado;outros;22
+2012;inscrito;publica;43277
+2012;inscrito;particular;77149
+2012;inscrito;maior parte pub;2107
+2012;inscrito;maior parte part;4544
+2012;inscrito;meia publica;644
+2012;inscrito;supletivo;0
+2012;inscrito;outros;333
+2012;chamado;publica;8377
+2012;chamado;particular;19289
+2012;chamado;maior parte pub;401
+2012;chamado;maior parte part;961
+2012;chamado;meia publica;111
+2012;chamado;supletivo;0
+2012;chamado;outros;64
+2012;matriculado;publica;2770
+2012;matriculado;particular;7615
+2012;matriculado;maior parte pub;148
+2012;matriculado;maior parte part;332
+2012;matriculado;meia publica;40
+2012;matriculado;supletivo;0
+2012;matriculado;outros;24
+2013;inscrito;publica;48738
+2013;inscrito;particular;81613
+2013;inscrito;maior parte pub;2574
+2013;inscrito;maior parte part;4484
+2013;inscrito;meia publica;0
+2013;inscrito;supletivo;0
+2013;inscrito;outros;639
+2013;chamado;publica;8585
+2013;chamado;particular;18952
+2013;chamado;maior parte pub;442
+2013;chamado;maior parte part;830
+2013;chamado;meia publica;0
+2013;chamado;supletivo;0
+2013;chamado;outros;134
+2013;matriculado;publica;2670
+2013;matriculado;particular;7920
+2013;matriculado;maior parte pub;137
+2013;matriculado;maior parte part;296
+2013;matriculado;meia publica;0
+2013;matriculado;supletivo;0
+2013;matriculado;outros;59
+2014;inscrito;publica;40765
+2014;inscrito;particular;75832
+2014;inscrito;maior parte pub;2122
+2014;inscrito;maior parte part;3807
+2014;inscrito;meia publica;0
+2014;inscrito;supletivo;0
+2014;inscrito;outros;4416
+2014;chamado;publica;9744
+2014;chamado;particular;15785
+2014;chamado;maior parte pub;324
+2014;chamado;maior parte part;651
+2014;chamado;meia publica;0
+2014;chamado;supletivo;0
+2014;chamado;outros;967
+2014;matriculado;publica;3453
+2014;matriculado;particular;6917
+2014;matriculado;maior parte pub;104
+2014;matriculado;maior parte part;262
+2014;matriculado;meia publica;0
+2014;matriculado;supletivo;0
+2014;matriculado;outros;428
+2015;inscrito;publica;35153
+2015;inscrito;particular;70413
+2015;inscrito;maior parte pub;7465
+2015;inscrito;maior parte part;9606
+2015;inscrito;meia publica;0
+2015;inscrito;supletivo;0
+2015;inscrito;outros;4305
+2015;chamado;publica;7376
+2015;chamado;particular;15703
+2015;chamado;maior parte pub;1571
+2015;chamado;maior parte part;1886
+2015;chamado;meia publica;0
+2015;chamado;supletivo;0
+2015;chamado;outros;935
+2015;matriculado;publica;2444
+2015;matriculado;particular;6925
+2015;matriculado;maior parte pub;660
+2015;matriculado;maior parte part;740
+2015;matriculado;meia publica;0
+2015;matriculado;supletivo;0
+2015;matriculado;outros;395
