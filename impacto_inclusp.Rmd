@@ -67,7 +67,7 @@ Este percentual foi de 30% em 2014 e de 24,7% em 2013.
 cursaram integralmente o ensino médio em escolas públicas. Este percentual foi de 32,2% em 2014 e de 27,8% em 2013.
 
 
-## Probabilidade de ingresso na USP
+# Probabilidade de ingresso na USP
 
 Os gráficos a seguir comparam a proporção de matriculados após a última chamada
 em relação ao número de inscritos em relação à origem escolar e raça.
@@ -78,7 +78,7 @@ em três períodos:
 * Antes inclusão de bônus racial no INCLUSP: 2007-2013
 * Após inclusão de bônus racial no INCLUSP: 2014-2015
 
-### Probabilidade de ingresso de oriundos da escola particular e pública
+## Probabilidade de ingresso de oriundos da escola particular e pública
 
 O gráfico mostra a proporção matriculados/inscritos para candidatos que cursaram
 o ensino médio integralmente em escola pública ou não, em cada período. 
@@ -131,7 +131,7 @@ de um candidato de escola particular ingressar foi
 vezes maior do que de um candidato oriundo do ensino público entre 2013 e 2015.
 
 
-### Probabilidade de ingresso de candidatos PPI
+## Probabilidade de ingresso de candidatos PPI
 
 ```{r PPI x brancos}
 ## Leitura dos dados
@@ -188,7 +188,7 @@ p2 + geom_point(aes(colour=raca), size=4) +
     annotate("segment", x=c(0.9,1.9, 2.9), xend=c(1.1,2.1,3.1),y=cor.cv$p.matr, yend=cor.cv$p.matr)
 ```
 
-## INCLUSP e inclusão racial
+# INCLUSP e inclusão racial
 
 O último gráfico mostra a proporção matriculados/ingressantes de candidatos PPI e brancos,
 dentro e fora do INCLUSP. A comparação foi feita entre os períodos em que
