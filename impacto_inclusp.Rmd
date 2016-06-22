@@ -253,7 +253,7 @@ justo no estrato mais carente.
 Os dados de raça declarada foram obtidos do site da FUVEST (http://www.fuvest.br/, seção "Estatísticas" > "Questionário de Avaliação Sócio-Econômica"), usando os agrupamentos "Total carreiras USP" e "Candidatos que optaram pelo Inclusp". 
 Os dados de onde os candidatos curasaram o ensino médio foram retirados do anuário da USP (https://uspdigital.usp.br/anuario/).
 
-As planilhas, códigos R e fonte deste documento estão no repositório público .
+As planilhas, códigos R e fonte deste documento estão no repositório público https://github.com/piLaboratory/inclusp .
 
 [^1]: RESOLUÇÃO Nº 6583, DE 4 DE JULHO DE 2013, http://www.leginf.usp.br/?resolucao=resolucao-no-6583-de-4-de-julho-de-2013
 
