@@ -44,7 +44,7 @@ foi incluído um bônus adicional de 5% aos candidatos de escolas públicas
 que se identificarem como "pretos, pardos ou indígenas" (PPI).
 
 A FUVEST disponibiliza em seu site 
-os resultados de sua pesquisa de perfil sócio-econômico dos
+os resultados de sua pesquisa de perfil socioeconômico dos
 candidatos, convocados e matriculados. 
 A partir do ano de 2000 a pesquisa
 pergunta a raça/cor dos candidatos, com as opções "branca", "preta", "parda", "amarela", "indígena".
@@ -218,7 +218,7 @@ p3 + geom_point(aes(colour=medio), size=4) +
 
 Antes da criação do INCLUSP, candidatos oriundos de escolas particulares tinha o dobro de chance de 
 ingressar na USP. A desigualdade foi reduzida com o INCLUSP, especialmente após 2013, quando
-houve aumento nos valores dos bônus e inclusão de bônus racial. Ainda assim, a propabilidade
+houve aumento nos valores dos bônus e inclusão de bônus racial. Ainda assim, a probabilidade
 de um candidato de escola particular ingressar foi 
 `r round(with(subset(ep.ad, periodo=="Inclusp bônus PPI"), p.matr[1]/p.matr[2]),1)` 
 vezes maior do que de um candidato oriundo do ensino público entre 2013 e 2015.
@@ -319,8 +319,8 @@ INCLUSP. O bônus racial de 5% reduziu um pouco essa desigualdade,
 mas os candidatos PPI oriundos de escola pública são ainda o grupo com menor
 probabilidade de ingresso. 
 
-Portanto, inclusão sócio-econômica não é capaz de reduzir desigualdades raciais,
-porque essas desigualdades estão presentes em todos os estratos sócio-econômicos.
+Portanto, inclusão socioeconômica não é capaz de reduzir desigualdades raciais,
+porque essas desigualdades estão presentes em todos os estratos socioeconômicos.
 No caso em análise, o quadro é ainda pior, pois as desigualdades raciais se acentuam 
 justo no estrato mais carente.
 
@@ -328,13 +328,15 @@ justo no estrato mais carente.
 # Fonte de dados
 
 Os dados de raça declarada foram obtidos do site da FUVEST (http://www.fuvest.br/, seção "Estatísticas" > "Questionário de Avaliação Sócio-Econômica"), usando os agrupamentos "Total carreiras USP" e "Candidatos que optaram pelo Inclusp". 
-Os dados de onde os candidatos curasaram o ensino médio foram retirados do anuário da USP (https://uspdigital.usp.br/anuario/).
+Os dados de onde os candidatos cursaram o ensino médio foram retirados do anuário da USP (https://uspdigital.usp.br/anuario/) 
+e do site da FUVEST.
 
 As planilhas, códigos R e fonte deste documento estão no repositório público https://github.com/piLaboratory/inclusp .
+Sugestões podem ser enviadas como *pull requests* ou para (prado@ib.usp.br).
 
 [^1]: RESOLUÇÃO Nº 6583, DE 4 DE JULHO DE 2013, http://www.leginf.usp.br/?resolucao=resolucao-no-6583-de-4-de-julho-de-2013
 
-[^2]: Os dados divulgados não permitem cruzar diretamente a pergunta sobre raça e onde cursou o ensino médio. No entanto, estão disponíveis os dados sobre raça dos optantes pelo Inclusp. Para optar pelo Inclusp é preciso ter cursado o ensino médio integralmente em escola pública. É possível que alguns candidatos com este perfil não tenham se inscrito no Inclusp, mas dadas as vantagens de se inscerevr isso não deve alterar muito os resultados. Por exemplo, no vestibular de 2015 todos que responeram ter cursado o ensino médio em
+[^2]: Os dados divulgados não permitem cruzar diretamente a pergunta sobre raça e onde cursou o ensino médio. No entanto, estão disponíveis os dados sobre raça dos optantes pelo Inclusp. Para optar pelo Inclusp é preciso ter cursado o ensino médio integralmente em escola pública. É possível que alguns candidatos com este perfil não tenham se inscrito no Inclusp, mas dadas as vantagens de se inscrever isso não deve alterar muito os resultados. Por exemplo, no vestibular de 2015 todos que responderam ter cursado o ensino médio em
 escola pública optaram pelo Inclusp.
 
 [^3]: Cálculo feito tomando a proporção de pessoas que se declaram como PPI no Censo de 2010, no Estado
