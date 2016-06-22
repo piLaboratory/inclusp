@@ -50,7 +50,7 @@ A partir do ano de 2000 a pesquisa
 pergunta a raça/cor dos candidatos, com as opções "branca", "preta", "parda", "amarela", "indígena".
 Os dados sobre aprovados e matriculados do vestibular de 2016 ainda não estão disponíveis.
 
-# Progresso das metas desde sua proposição
+# Progresso das metas
 
 ## Proporção de oriundos de escolas públicas
 
@@ -72,7 +72,6 @@ epf$p.publ <- epf$n.publica/epf$total.resp
 epIB <- read.csv2("ensin_medioIB.csv")
 ## Calculo proporcoes
 epIB$p.publ <- epIB$n.publica/epIB$total.resp
-
 ## Grafico
 par(lwd=2)
 plot(p.publ ~ ano, ylim=c(0,.6), data=epf, subset=fase=="matriculado", type="l",
@@ -90,12 +89,13 @@ O gráfico a seguir mostra a proporção de PPI entre os matriculados após a ú
 que aderiram ao INCLUSP [^2]. No primeiro vestibular com o programa INCLUSP, 24% dos matriculados
 que aderiram ao programa declaram-se PPI. Este indicador subiu oito pontos percentuais até 2015, 
 dos quais três pontos foram após o bônus racial (2014-2015). 
-Para alcançar a meta no âmbito da USP será preciso subir mais 4.61 pontos percentuais até 2018[^3] .
+Para alcançar a meta no âmbito da USP será preciso subir mais 4,61 pontos percentuais até 2018 [^3].
 Note-se que isso não implica em alcançar a meta em todos os cursos, apenas na média geral.
 
 Não foi possível obter a proporção de PPI entre os matriculados INCLUSP do IB do site da FUVEST.
 Para dar alguma referência, o gráfico mostra também a proporção de PPI no total de matriculados, 
-na USP e no IB.
+na USP e no IB. Com a exceção de 2011, a proporção de PPI matriculados no IB esteve abaixo da observada
+na USP.
 
 
 ```{r evolucao ppi}
