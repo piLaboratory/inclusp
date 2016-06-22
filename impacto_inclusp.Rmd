@@ -248,7 +248,7 @@ No caso em análise, o quadro é ainda pior, pois as desigualdades raciais se ac
 justo no estrato mais carente.
 
 
-## Fonte de dados
+# Fonte de dados
 
 Os dados de raça declarada foram obtidos do site da FUVEST (http://www.fuvest.br/, seção "Estatísticas" > "Questionário de Avaliação Sócio-Econômica"), usando os agrupamentos "Total carreiras USP" e "Candidatos que optaram pelo Inclusp". 
 Os dados de onde os candidatos curasaram o ensino médio foram retirados do anuário da USP (https://uspdigital.usp.br/anuario/).
