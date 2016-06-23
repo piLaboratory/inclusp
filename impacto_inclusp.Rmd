@@ -37,7 +37,7 @@ Em 2013 a USP estabeleceu em seu  Plano Institucional [^1] as seguintes metas pa
 
 O Programa de inclusão social da USP (INCLUSP) iniciou-se em 2007, 
 concedendo bônus de 3% nas notas das duas fase dos vestibular para candidatos que cursaram todo ensino médio em escolas públicas.
-Nos anos seguintes critérios e valores de bônus foram gradativamente aumentados.
+Nos anos seguintes critérios diversificados e valores de bônus foram gradativamente aumentados.
 
 A partir do vestibular de 2014
 foi incluído um bônus adicional de 5% aos candidatos de escolas públicas 
@@ -82,14 +82,13 @@ abline(h=0.5, lty=2, col="red")
 legend("topright", c("USP", "IB", "Meta"), col=c("blue","black", "red"), lty=c(1,1,1,2), bty="n")
 ```
 
-## Proporção de PPI
-
+## Proporção de PPI no INCLUSP
 
 O gráfico a seguir mostra a proporção de PPI entre os matriculados após a última chamada que
 que aderiram ao INCLUSP [^2]. No primeiro vestibular com o programa INCLUSP, 24% dos matriculados
 que aderiram ao programa declaram-se PPI. Este indicador subiu oito pontos percentuais até 2015, 
 dos quais três pontos foram após o bônus racial (2014-2015). 
-Para alcançar a meta no âmbito da USP será preciso subir mais 4,61 pontos percentuais até 2018 [^3].
+Para alcançar a meta no âmbito da USP será preciso subir mais 4,6 pontos percentuais até 2018 [^3].
 Note-se que isso não implica em alcançar a meta em todos os cursos, apenas na média geral.
 
 Não foi possível obter a proporção de PPI entre os matriculados INCLUSP do IB do site da FUVEST.
@@ -163,20 +162,20 @@ legend("topright", c("USP", "INCLUSP", "IB", "Meta"), col=c("blue","green", "bla
 # Probabilidade de ingresso na USP
 
 Os gráficos a seguir comparam a proporção de matriculados após a última chamada
-em relação ao número de inscritos, separados por à origem escolar e raça.
+em relação ao número de inscritos, separados por origem escolar e raça.
 Os dados foram obtidos do site da FUVEST e do anuário da USP. Os dados estão agregados
 em três períodos:
 
-* Antes da criação do INCLUSP: 2000 - 2006
+* Antes da criação do INCLUSP: 2000-2006
 * Antes inclusão de bônus racial no INCLUSP: 2007-2013
 * Após inclusão de bônus racial no INCLUSP: 2014-2015
 
 ## Probabilidade de ingresso de oriundos da escola particular e pública
 
-O gráfico mostra a proporção matriculados/inscritos para candidatos que cursaram
+O gráfico a seguir mostra a proporção matriculados/inscritos para candidatos que cursaram
 o ensino médio integralmente em escola pública ou não, em cada período. 
 As barras são intervalos de confiança. Os traços pretos indicam a relação
-candidato/vaga de cada vestibular.  Se houvesse igualdade de condições 
+candidato/vaga dos vestibulares em cada período.  Se houvesse igualdade de condições 
 todas as proporções deveriam convergir para os valores da razão candidato/vaga. 
 
 ```{r escola publica x privada}
@@ -217,11 +216,12 @@ p3 + geom_point(aes(colour=medio), size=4) +
 ```
 
 Antes da criação do INCLUSP, candidatos oriundos de escolas particulares tinha o dobro de chance de 
-ingressar na USP. A desigualdade foi reduzida com o INCLUSP, especialmente após 2013, quando
+ingressar na USP, comparados aos oriundos do ensino público. 
+A desigualdade foi reduzida com o INCLUSP, especialmente após 2013, quando
 houve aumento nos valores dos bônus e inclusão de bônus racial. Ainda assim, a probabilidade
 de um candidato de escola particular ingressar foi 
 `r round(with(subset(ep.ad, periodo=="Inclusp bônus PPI"), p.matr[1]/p.matr[2]),1)` 
-vezes maior do que de um candidato oriundo do ensino público entre 2013 e 2015.
+vezes maior do que de um candidato oriundo do ensino público entre 2014 e 2015.
 
 
 ## Probabilidade de ingresso de candidatos PPI
@@ -255,7 +255,7 @@ candidatos PPI e brancos, nos três períodos. No período 2000-2007, anterior
 ingressar era `r round(with(subset(cor.ad, periodo=="Antes Inclusp"), p.matr[1]/p.matr[2]),1)`
 vezes maior do que de um candidato PPI. Novamente, a desigualdade se reduziu após
 a criação do INCLUSP, e ainda mais a partir da inclusão do bônus racial.
-Mesmo assim, a chance de um candidato branco ingressar é 
+Mesmo assim, a chance de um candidato branco ingressar em 2014-2015 foi 
 `r round(with(subset(cor.ad, periodo=="Inclusp bônus PPI"), p.matr[1]/p.matr[2]),1)`
 vez maior do que de um candidato PPI.
 
