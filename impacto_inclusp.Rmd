@@ -363,7 +363,7 @@ optaram o percentual é de
 ```{r plot renda inclusp, fig.width=6.5, fig.height=5.5}
 ggplot(renda, aes(salario, n.rel, fill=inclusp)) +
     geom_bar(stat="identity", position="dodge") +
-    scale_fill_discrete(name="Inclusp", labels=c("SIM", "NÃO")) +
+    scale_fill_discrete(name="Inclusp", labels=c("NÃO", "SIM")) +
     ylab("Proporção dos candidatos")+
     xlab("Renda familiar em salários mínimos") +
     theme_bw() +
