@@ -37,7 +37,7 @@ Em 2013 a USP estabeleceu em seu  Plano Institucional [^1] as seguintes metas pa
 
 O Programa de inclusão social da USP (INCLUSP) iniciou-se em 2007, 
 concedendo bônus de 3% nas notas das duas fase dos vestibular para candidatos que cursaram todo ensino médio em escolas públicas.
-Nos anos seguintes critérios diversificados e valores de bônus foram gradativamente aumentados.
+Nos anos seguintes critérios diversificados e valores de bônus foram gradativamente aumentados [^4].
 
 A partir do vestibular de 2014
 foi incluído um bônus adicional de 5% aos candidatos de escolas públicas 
@@ -434,3 +434,5 @@ Críticas e sugestões podem ser enviadas como [pull requests](https://github.co
 
 [^3]: Cálculo feito tomando a proporção de pessoas que se declaram como PPI no Censo de 2010, no Estado
 de São Paulo (36,7%). Segundo este mesmo censo a proporção de PPI na população brasileira é de 55,2%.
+
+[^4]: Ver linha do tempo na edição especial sobre inclusão do Jornal da USP : http://jornal.usp.br/especial/
