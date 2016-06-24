@@ -72,14 +72,17 @@ epf$p.publ <- epf$n.publica/epf$total.resp
 epIB <- read.csv2("ensin_medioIB.csv")
 ## Calculo proporcoes
 epIB$p.publ <- epIB$n.publica/epIB$total.resp
+```
+
+```{r plot evolucao EP, fig.width=6.5, fig.height=5.5}
 ## Grafico
 par(lwd=2)
-plot(p.publ ~ ano, ylim=c(0,.6), data=epf, subset=fase=="matriculado", type="l",
+plot(p.publ ~ ano, ylim=c(0,.55), data=epf, subset=fase=="matriculado", type="l",
      xlab = "Ano", ylab="Proporção do total de matrículas", col="blue",
      main="Proporção de oriundos de EP entre matriculados")
 lines(p.publ ~ ano, data=epIB, subset=fase=="matriculado")
 abline(h=0.5, lty=2, col="red")
-legend("topright", c("USP", "IB", "Meta"), col=c("blue","black", "red"), lty=c(1,1,1,2), bty="n")
+legend("bottomright", c("USP", "IB", "Meta"), col=c("blue","black", "red"), lty=c(1,1,2), bty="n")
 ```
 
 ## Proporção de PPI no INCLUSP
@@ -147,15 +150,18 @@ corIB2 <- group_by(corIB, ano, fase, ppi) %>%
     mutate(total=no.ppi+ppi, prop.ppi=ppi/total)
 corIB2$ic.low <- binconf(corIB2$ppi, corIB2$total, method="exact")[,2]
 corIB2$ic.up <- binconf(corIB2$ppi, corIB2$total, method="exact")[,3]
+```
+
+```{r plot evolucao ppi, fig.width=6.5, fig.height=5.5}
 ## Grafico
 par(lwd=2)
-plot(prop.ppi ~ ano, ylim=c(0,.45), data=cor2, subset=fase=="matriculado", type="l",
+plot(prop.ppi ~ ano, ylim=c(0,.5), data=cor2, subset=fase=="matriculado", type="l",
      xlab = "Ano", ylab="Proporção do total de matrículas", col="blue",
      main="Proporção de PPI entre matriculados")
 lines(prop.ppi ~ ano, data=incl2, subset=fase=="matriculado", col="green")
 lines(prop.ppi ~ ano, data=corIB2, subset=fase=="matriculado")
 abline(h=0.367, lty=2, col="red")
-legend("topright", c("USP", "INCLUSP", "IB", "Meta"), col=c("blue","green", "black", "red"), lty=c(1,1,1,2), bty="n")
+legend("topleft", c("USP", "INCLUSP", "IB", "Meta"), col=c("blue","green", "black", "red"), lty=c(1,1,1,2), bty="n")
 ```
 
 
@@ -276,7 +282,9 @@ p2 + geom_point(aes(colour=raca), size=4) +
 
 # INCLUSP e inclusão racial
 
-O último gráfico mostra a proporção matriculados/ingressantes de candidatos PPI e brancos,
+## Probabilidade de ingresso de PPI pelo INCLUSP e fora dele
+
+O gráfico a seguir mostra a proporção matriculados/ingressantes de candidatos PPI e brancos,
 dentro e fora do INCLUSP. A comparação foi feita entre os períodos em que
 programa não tinha bônus racial (2007-2013) e após a inclusão deste bônus (2014-2015).
 
@@ -324,6 +332,92 @@ porque essas desigualdades estão presentes em todos os estratos socioeconômico
 No caso em análise, o quadro é ainda pior, pois as desigualdades raciais se acentuam 
 justo no estrato mais carente.
 
+## Perfil econômico e racial de inscritos no INCLUSP
+
+### Renda familiar
+
+```{r renda inclusp}
+renda <- read.csv2("inclusp2015renda.csv", as.is=TRUE)
+renda$salario <- factor(renda$salario, levels=c("<1", "1-2", "2-3", "3-5", "5-7", "7-10", "10-15", "15-20", ">20"))
+renda$n.rel <- renda$n.rel.c <- NA
+renda$n.rel[renda$inclusp] <- renda$N[renda$inclusp]/sum(renda$N[renda$inclusp])
+renda$n.rel.c[renda$inclusp] <- cumsum(renda$n.rel[renda$inclusp])
+renda$n.rel[!renda$inclusp] <- renda$N[!renda$inclusp]/sum(renda$N[!renda$inclusp])
+renda$n.rel.c[!renda$inclusp] <- cumsum(renda$n.rel[!renda$inclusp])
+```
+
+A análise acima pressupõe que os candidatos que se inscrevem no INCLUSP
+pertencem a estratos de menor renda. Para demonstrar essa premissa, 
+o gráfico a seguir mostra a proporção
+dos candidatos do vestibular de 2015 em faixas de renda,
+nos dois grupos (optantes e não optantes pelo INCLUSP).
+O grupo de optantes pelo INCLUSP claramente tem menor renda 
+familiar.
+Por exemplo, `r round(sum(renda$n.rel[renda$inclusp][1:4])*100,0)`% 
+dos candidatos que optaram pelo INCLUSP declararam renda
+familiar de até 5 salários mínimos. Entre os que não
+optaram o percentual é de 
+`r round(sum(renda$n.rel[!renda$inclusp][1:4])*100,0)`%.
+
+
+```{r plot renda inclusp, fig.width=6.5, fig.height=5.5}
+ggplot(renda, aes(salario, n.rel, fill=inclusp)) +
+    geom_bar(stat="identity", position="dodge") +
+    scale_fill_discrete(name="Inclusp", labels=c("SIM", "NÃO")) +
+    ylab("Proporção dos candidatos")+
+    xlab("Renda familiar em salários mínimos") +
+    theme_bw() +
+    theme(axis.text= element_text(size=15),
+          axis.title= element_text(size=17),
+          strip.text.x = element_text(size=20),
+          legend.text=element_text(size=14))
+```
+
+### Cor declarada
+
+```{r ppi em nao inclusp}
+incl3 <- filter(incl, inclusp=="Não Inclusp") %>%
+    group_by(ano, fase, ppi) %>%
+    summarise(n.fuvest=sum(N)) %>%
+    spread(ppi, n.fuvest) %>%
+    mutate(total=no.ppi+ppi, prop.ppi=ppi/total)
+incl2$ic.low <- binconf(incl2$ppi, incl2$total, method="exact")[,2]
+incl2$ic.up <- binconf(incl2$ppi, incl2$total, method="exact")[,3]
+```
+O grupo de inscritos que optaram pelo INCLUSP também difere
+marcadamente do grupos dos que não optaram pelo INCLUSP em termos raciais.
+O gráfico a seguir mostra, à esquerda, a proporção de inscritos no vestibular
+que se declararam PPI nesses dois grupos. Não houve muita
+variação entre os anos, e em todo o período 
+`r round(sum(incl2$ppi[incl2$fase=="inscrito"])/sum(incl2$total[incl2$fase=="inscrito"])*100,0)`%
+dos inscritos INCLUSP se declararam PPI.
+Entre os inscritos que não estavam no INCLUSP
+`r round(sum(incl3$ppi[incl2$fase=="inscrito"])/sum(incl3$total[incl2$fase=="inscrito"])*100,0)`%
+se declararam PPI no período.
+
+O gráfico da esquerda mostra a proporção dos matriculados que se declaram PPI
+nos dois grupos. A proporção de PPI aprovados entre os que não optaram pelo INCLUSP
+é bem parecida com a observada entre os inscritos neste grupo 
+(`r round(sum(incl3$ppi[incl2$fase=="matriculado"])/sum(incl3$total[incl2$fase=="matriculado"])*100,0)`% no período)
+No entanto, a proporção de PPI aprovados entre os que optaram pelo INCLUSP é
+claramente menor do que entre os inscritos
+(`r round(sum(incl2$ppi[incl2$fase=="matriculado"])/sum(incl2$total[incl2$fase=="matriculado"])*100,0)`%). 
+Como já indicado acima, isso indica um viés de seleção racial, muito mais acentuado no estrato que optou
+pelo programa de inclusão social.
+
+
+```{r plot ppi no INCLUSP e nao INCLUSP}
+par(lwd=2, mfrow=c(1,2))
+plot(prop.ppi ~ ano, ylim=c(0,.45), data=incl2, subset=fase=="inscrito", type="l",
+     xlab = "Ano", ylab="Proporção do total de inscritos", col="blue",
+     main="Proporção de PPI entre os inscritos")
+lines(prop.ppi ~ ano, data=incl3, subset=fase=="inscrito", col="red")
+plot(prop.ppi ~ ano, ylim=c(0,.45), data=incl2, subset=fase=="matriculado", type="l",
+     xlab = "Ano", ylab="Proporção do total de matriculados", col="blue",
+     main="Proporção de PPI entre os matriculados")
+lines(prop.ppi ~ ano, data=incl3, subset=fase=="matriculado", col="red")
+legend("topright", c("INCLUSP", "NÃO INCLUSP"), col=c("blue","red"), bty="n", lty=1)
+```
 
 # Fonte de dados
 
@@ -332,12 +426,11 @@ Os dados de onde os candidatos cursaram o ensino médio foram retirados do anuá
 e do site da FUVEST.
 
 As planilhas, códigos R e fonte deste documento estão no repositório público https://github.com/piLaboratory/inclusp .
-Sugestões podem ser enviadas como *pull requests* ou para (prado@ib.usp.br).
+Críticas e sugestões podem ser enviadas como [pull requests](https://github.com/piLaboratory/inclusp/pulls), [issues](https://github.com/piLaboratory/inclusp/issues) ou para <prado@ib.usp.br>.
 
 [^1]: RESOLUÇÃO Nº 6583, DE 4 DE JULHO DE 2013, http://www.leginf.usp.br/?resolucao=resolucao-no-6583-de-4-de-julho-de-2013
 
-[^2]: Os dados divulgados não permitem cruzar diretamente a pergunta sobre raça e onde cursou o ensino médio. No entanto, estão disponíveis os dados sobre raça dos optantes pelo Inclusp. Para optar pelo Inclusp é preciso ter cursado o ensino médio integralmente em escola pública. É possível que alguns candidatos com este perfil não tenham se inscrito no Inclusp, mas dadas as vantagens de se inscrever isso não deve alterar muito os resultados. Por exemplo, no vestibular de 2015 todos que responderam ter cursado o ensino médio em
-escola pública optaram pelo Inclusp.
+[^2]: Os dados divulgados não permitem cruzar diretamente a pergunta sobre raça e onde cursou o ensino médio. No entanto, estão disponíveis os dados sobre raça dos optantes pelo Inclusp. Para optar pelo Inclusp é preciso ter cursado o ensino médio integralmente em escola pública. É possível que alguns candidatos com este perfil não tenham se inscrito no Inclusp, mas dadas as vantagens de se inscrever isso não deve alterar muito os resultados. Por exemplo, no vestibular de 2015 todos que responderam ter cursado o ensino médio em escola pública optaram pelo Inclusp.
 
 [^3]: Cálculo feito tomando a proporção de pessoas que se declaram como PPI no Censo de 2010, no Estado
 de São Paulo (36,7%). Segundo este mesmo censo a proporção de PPI na população brasileira é de 55,2%.
