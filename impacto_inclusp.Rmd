@@ -221,7 +221,7 @@ p3 + geom_point(aes(colour=medio), size=4) +
     annotate("segment", x=c(0.9,1.9, 2.9), xend=c(1.1,2.1,3.1),y=ep.cv$p.matr, yend=ep.cv$p.matr)
 ```
 
-Antes da criação do INCLUSP, candidatos oriundos de escolas particulares tinha o dobro de chance de 
+Antes da criação do INCLUSP, candidatos oriundos de escolas particulares tinham o dobro de chance de 
 ingressar na USP, comparados aos oriundos do ensino público. 
 A desigualdade foi reduzida com o INCLUSP, especialmente após 2013, quando
 houve aumento nos valores dos bônus e inclusão de bônus racial. Ainda assim, a probabilidade
