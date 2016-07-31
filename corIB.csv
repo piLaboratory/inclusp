@@ -95,6 +95,12 @@ ano;fase;cor;n.fuvest
 2015;inscrito;parda;320
 2015;inscrito;indígena;2
 2015;inscrito;NR;0
+2016;inscrito;branca;1129
+2016;inscrito;preta;75
+2016;inscrito;amarela;85
+2016;inscrito;parda;289
+2016;inscrito;indígena;4
+2016;inscrito;NR;0
 2000;matriculado;branca;98
 2000;matriculado;preta;1
 2000;matriculado;amarela;18
@@ -191,3 +197,9 @@ ano;fase;cor;n.fuvest
 2015;matriculado;parda;15
 2015;matriculado;indígena;0
 2015;matriculado;NR;0
+2016;matriculado;branca;86
+2016;matriculado;preta;4
+2016;matriculado;amarela;8
+2016;matriculado;parda;8
+2016;matriculado;indígena;0
+2016;matriculado;NR;0
