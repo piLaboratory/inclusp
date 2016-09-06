@@ -37,33 +37,55 @@ Em 2013 a USP estabeleceu em seu  Plano Institucional [^1] as seguintes metas pa
 
 O Programa de inclusão social da USP (INCLUSP) iniciou-se em 2007, 
 concedendo bônus de 3% nas notas das duas fase dos vestibular para candidatos que cursaram todo ensino médio em escolas públicas.
-Nos anos seguintes critérios diversificados e valores de bônus foram gradativamente aumentados [^4].
+Nos anos seguintes os critérios foram diversificados e valores de bônus foram gradativamente aumentados [^4].
 
 A partir do vestibular de 2014
 foi incluído um bônus adicional de 5% aos candidatos de escolas públicas 
 que se identificarem como "pretos, pardos ou indígenas" (PPI).
 
-A FUVEST disponibiliza em seu site 
-os resultados de sua pesquisa de perfil socioeconômico dos
-candidatos, convocados e matriculados. 
+Neste documento usei os dados 
+da pesquisa de perfil socioeconômico dos
+candidatos inscritos e matriculados pela FUVEST. 
 A partir do ano de 2000 a pesquisa
 pergunta a raça/cor dos candidatos, com as opções "branca", "preta", "parda", "amarela", "indígena".
-Os dados sobre aprovados e matriculados do vestibular de 2016 ainda não estão disponíveis.
+Os dados da FUVEST não incluem as inscrições e matrículas pelo Sistema de Seleção Unificada do MEC (SISU),
+usado pela USP desde 2016 para uma parcela das vagas. 
 
 # Progresso das metas
 
 ## Proporção de oriundos de escolas públicas
 
 O gráfico abaixo mostra a proporção dos matriculados após a última chamada de cada vestibular
-que cursaram o ensino médio integralmente no ensino público (EP).
-De 2000 a 2015 a proporção de EP na USP passou de 25% para 35%. 
+que cursaram o ensino médio integralmente no ensino público (EP), segundo os dados da FUVEST.
+São mostrados dados até 2015, quando a única via de ingresso era a FUVEST [^5].
+De 2000 a 2015 a proporção de EP na USP passou de `r round(epf$p.publ[epf$ano==2000&epf$fase=="matriculado"]*100,0)`% para 
+`r round(epf$p.publ[epf$ano==2015&epf$fase=="matriculado"]*100,0)`%. 
 O IB teve uma proporção abaixo da observada na USP, mas
-alcançou a média da universidade no últimos dois anos.
-Para cumprir a meta seria preciso aumentar a proporção de EP em 15 pontos percentuais
-em dois anos, sendo que foram necessários 15 anos para se avançar 10 pontos.
+alcançou a média da universidade em 2014.
+Para cumprir a meta seria preciso aumentar a proporção de EP em  
+`r 50 - round(epf$p.publ[epf$ano==2015&epf$fase=="matriculado"]*100,0)`
+pontos percentuais até 2018, sendo que foram necessários 15 anos para se avançar
+`r round(epf$p.publ[epf$ano==2015&epf$fase=="matriculado"]*100,0) - round(epf$p.publ[epf$ano==2000&epf$fase=="matriculado"]*100,0)`
+pontos.
 
 ```{r evolucao ep}
 ## Na USP
+################################################################################
+## Código para usar dados do anuario
+## Os dados de 2014 e 2015 estao repetidos no anuario
+## Por enquanto usei os dados da FUVEST, que ate 2015 expressam o total de matriculas
+## NOTE QUE A PARTIR DE 2016 OS DADOS FUVEST NAO TÊM O TOTAL DE MATRICULAS DEVIDO AO SISU
+## leitura dos dados
+## ep <- read.csv2("ensino_medio.csv", as.is=TRUE)
+## epf <- filter(ep, ano>1999 & fase=="matriculado") %>%
+##     mutate(medio=ifelse(ensino.medio=="publica","Escola Pública", "Escola Particular"))%>%
+##     group_by(ano, medio) %>%
+##     summarise(matr=sum(n.anuario)) %>%
+##     spread(medio, matr) %>%
+##     as.data.frame()
+## epf$p.publ <- epf[,3]/(epf[,2]+epf[,3])
+################################################################################
+## codigo para usar dados fuvest (substituir pelo acima quando anuario for corrigido
 ## leitura dos dados
 epf <- read.csv2("ensino_medio_fuvest.csv", as.is=TRUE)
 ## Calculo das proporcoes
@@ -77,22 +99,33 @@ epIB$p.publ <- epIB$n.publica/epIB$total.resp
 ```{r plot evolucao EP, fig.width=6.5, fig.height=5.5}
 ## Grafico
 par(lwd=2)
-plot(p.publ ~ ano, ylim=c(0,.55), data=epf, subset=fase=="matriculado", type="l",
+plot(p.publ ~ ano, ylim=c(0,.55), data=epf, subset=fase=="matriculado"&ano<2016,
+     type="l",
      xlab = "Ano", ylab="Proporção do total de matrículas", col="blue",
      main="Proporção de oriundos de EP entre matriculados")
-lines(p.publ ~ ano, data=epIB, subset=fase=="matriculado")
+lines(p.publ ~ ano, data=epIB, subset=fase=="matriculado"&ano<2016)
 abline(h=0.5, lty=2, col="red")
 legend("bottomright", c("USP", "IB", "Meta"), col=c("blue","black", "red"), lty=c(1,1,2), bty="n")
 ```
 
-## Proporção de PPI no INCLUSP
+## Proporção de PPI entre oriundos de escola pública
 
-O gráfico a seguir mostra a proporção de PPI entre os matriculados após a última chamada que
-que aderiram ao INCLUSP [^2]. No primeiro vestibular com o programa INCLUSP, 24% dos matriculados
-que aderiram ao programa declaram-se PPI. Este indicador subiu oito pontos percentuais até 2015, 
-dos quais três pontos foram após o bônus racial (2014-2015). 
-Para alcançar a meta no âmbito da USP será preciso subir mais 4,6 pontos percentuais até 2018 [^3].
-Note-se que isso não implica em alcançar a meta em todos os cursos, apenas na média geral.
+O gráfico a seguir mostra a proporção de PPI entre os matriculados após a última chamada,
+oriundos do INCLUSP. Esta proporção é a melhor aproximação da proporção de PPI entre os oriundos de
+escola pública que podemos obter com os dados da FUVEST até 2015 [^2]. 
+No primeiro vestibular com o programa INCLUSP, 
+`r round(incl2$prop.ppi[incl2$ano==2007&incl2$fase=="matriculado"]*100,0)`% 
+dos matriculados
+que aderiram ao programa declararam-se PPI. Este indicador subiu 
+`r round(incl2$prop.ppi[incl2$ano==2015&incl2$fase=="matriculado"]*100,0) - round(incl2$prop.ppi[incl2$ano==2007&incl2$fase=="matriculado"]*100,0)`
+pontos percentuais até 2015, 
+dos quais 
+`r round(incl2$prop.ppi[incl2$ano==2015&incl2$fase=="matriculado"]*100,0) - round(incl2$prop.ppi[incl2$ano==2014&incl2$fase=="matriculado"]*100,0)`
+pontos foram após o bônus racial (a partir de 2014). 
+Para alcançar a meta no âmbito da USP será preciso subir mais 
+`r 36.7 - round(incl2$prop.ppi[incl2$ano==2015&incl2$fase=="matriculado"]*100,1)`
+pontos percentuais até 2018 [^3].
+Note-se que isso implica em alcançar a meta na média geral da USP, mas não necessariamente em todos os cursos.
 
 Não foi possível obter a proporção de PPI entre os matriculados INCLUSP do IB do site da FUVEST.
 Para dar alguma referência, o gráfico mostra também a proporção de PPI no total de matriculados, 
@@ -155,11 +188,11 @@ corIB2$ic.up <- binconf(corIB2$ppi, corIB2$total, method="exact")[,3]
 ```{r plot evolucao ppi, fig.width=6.5, fig.height=5.5}
 ## Grafico
 par(lwd=2)
-plot(prop.ppi ~ ano, ylim=c(0,.5), data=cor2, subset=fase=="matriculado", type="l",
+plot(prop.ppi ~ ano, ylim=c(0,.5), data=cor2, subset=fase=="matriculado"&ano<2016, type="l",
      xlab = "Ano", ylab="Proporção do total de matrículas", col="blue",
      main="Proporção de PPI entre matriculados")
-lines(prop.ppi ~ ano, data=incl2, subset=fase=="matriculado", col="green")
-lines(prop.ppi ~ ano, data=corIB2, subset=fase=="matriculado")
+lines(prop.ppi ~ ano, data=incl2, subset=fase=="matriculado"&ano<2015, col="green")
+lines(prop.ppi ~ ano, data=corIB2, subset=fase=="matriculado"&ano<2016)
 abline(h=0.367, lty=2, col="red")
 legend("topleft", c("USP", "INCLUSP", "IB", "Meta"), col=c("blue","green", "black", "red"), lty=c(1,1,1,2), bty="n")
 ```
@@ -168,13 +201,12 @@ legend("topleft", c("USP", "INCLUSP", "IB", "Meta"), col=c("blue","green", "blac
 # Probabilidade de ingresso na USP
 
 Os gráficos a seguir comparam a proporção de matriculados após a última chamada
-em relação ao número de inscritos, separados por origem escolar e raça.
-Os dados foram obtidos do site da FUVEST e do anuário da USP. Os dados estão agregados
-em três períodos:
+em relação ao número de inscritos na FUVEST, separados por origem escolar e raça.
+Os dados estão agregados em três períodos:
 
 * Antes da criação do INCLUSP: 2000-2006
 * Antes inclusão de bônus racial no INCLUSP: 2007-2013
-* Após inclusão de bônus racial no INCLUSP: 2014-2015
+* Após inclusão de bônus racial no INCLUSP: 2014-`r max(epf$ano)`
 
 ## Probabilidade de ingresso de oriundos da escola particular e pública
 
@@ -185,25 +217,50 @@ candidato/vaga dos vestibulares em cada período.  Se houvesse igualdade de cond
 todas as proporções deveriam convergir para os valores da razão candidato/vaga. 
 
 ```{r escola publica x privada}
-## leitura dos dados
-ep <- read.csv2("ensino_medio.csv", as.is=TRUE)
+################################################################################
+## Codigos que usam os dados do anuario
+## usar apenas apos USP corrigir dados dos anuarios 2014-2015
 ## Relacao candidato/vaga
-ep.cv <- filter(ep, ano>1999) %>%
-    spread(fase, n.anuario) %>%
-    mutate(periodo=cut(ano, breaks=c(1999,2006,2013,2015),
-                       labels=c("Antes Inclusp", "Inclusp sem bônus PPI", "Inclusp bônus PPI"))) %>%
-    group_by(periodo) %>%
-    summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
-    mutate(p.matr = matr/inscr)
+## ep <- read.csv2("ensino_medio.csv", as.is=TRUE)
+## ep.cv <- filter(ep, ano>1999) %>%
+##     spread(fase, n.anuario) %>%
+##     mutate(periodo=cut(ano, breaks=c(1999,2006,2013,2015),
+##                        labels=c("Antes Inclusp", "Inclusp sem bônus PPI", "Inclusp bônus PPI"))) %>%
+##     group_by(periodo) %>%
+##     summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
+##     mutate(p.matr = matr/inscr)
 ## Calculo das proporcoes
-ep.ad <- filter(ep, ano>1999, ensino.medio!="outros"&ensino.medio!="supletivo") %>%
-    mutate(medio=ifelse(ensino.medio=="publica","Escola Pública", "Escola Particular"))%>%
-    spread(fase, n.anuario) %>%
-    mutate(periodo=cut(ano, breaks=c(1999,2006,2013,2015),
-                       labels=c("Antes Inclusp", "Inclusp sem bônus PPI", "Inclusp bônus PPI"))) %>%
-    group_by(periodo, medio) %>%
-    summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
-    mutate(p.matr = matr/inscr)
+## ep.ad <- filter(ep, ano>1999, ensino.medio!="outros"&ensino.medio!="supletivo") %>%
+##     mutate(medio=ifelse(ensino.medio=="publica","Escola Pública", "Escola Particular"))%>%
+##     spread(fase, n.anuario) %>%
+##     mutate(periodo=cut(ano, breaks=c(1999,2006,2013,2015),
+##                        labels=c("Antes Inclusp", "Inclusp sem bônus PPI", "Inclusp bônus PPI"))) %>%
+##     group_by(periodo, medio) %>%
+##     summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
+##     mutate(p.matr = matr/inscr)
+## ## Adiciona intervalos de confiança
+## ep.ad$ic.low <- binconf(ep.ad$matr, ep.ad$inscr, method="exact")[,2]
+## ep.ad$ic.up <- binconf(ep.ad$matr, ep.ad$inscr, method="exact")[,3]
+################################################################################
+##
+## Estes codigos usam os dados FUVEST
+## Usar até que USP corrija dados do anuario
+## TODO: criar uma unica lanilha com dados FUVEST e anuario, como ja feito para cor
+ep.cv <-  mutate(epf, periodo=cut(ano, breaks=c(1999,2006,2013,max(epf$ano)),
+                        labels=c("Antes Inclusp", "Inclusp sem bônus PPI", "Inclusp bônus PPI"))) %>%
+    group_by(periodo, fase) %>%
+    summarise(n.fuvest=sum(total.resp)) %>%
+    spread(fase, n.fuvest) %>%
+    mutate(p.matr = matriculado/inscrito)
+ep.ad <- 
+    mutate(epf, periodo=cut(ano, breaks=c(1999,2006,2013,max(epf$ano)),
+                        labels=c("Antes Inclusp", "Inclusp sem bônus PPI", "Inclusp bônus PPI"))) %>%
+    group_by(periodo, fase) %>%
+    summarise(n.pub=sum(n.publica), n.part=sum(total.resp-n.publica)) %>%
+    gather(var, n.fuvest, n.pub, n.part) %>%
+    spread(fase, n.fuvest) %>%
+    mutate(p.matr = matriculado/inscrito, medio=ifelse(var=="n.pub", "Escola Pública", "Escola Particular")) %>%
+    select(periodo, medio, inscrito:p.matr)
 ## Adiciona intervalos de confiança
 ep.ad$ic.low <- binconf(ep.ad$matr, ep.ad$inscr, method="exact")[,2]
 ep.ad$ic.up <- binconf(ep.ad$matr, ep.ad$inscr, method="exact")[,3]
@@ -221,13 +278,15 @@ p3 + geom_point(aes(colour=medio), size=4) +
     annotate("segment", x=c(0.9,1.9, 2.9), xend=c(1.1,2.1,3.1),y=ep.cv$p.matr, yend=ep.cv$p.matr)
 ```
 
-Antes da criação do INCLUSP, candidatos oriundos de escolas particulares tinham o dobro de chance de 
+Antes da criação do INCLUSP, candidatos oriundos de escolas particulares tinham 
+`r round(with(subset(ep.ad, periodo=="Antes Inclusp"), p.matr[1]/p.matr[2]),1)` 
+vezes mais chance de 
 ingressar na USP, comparados aos oriundos do ensino público. 
 A desigualdade foi reduzida com o INCLUSP, especialmente após 2013, quando
 houve aumento nos valores dos bônus e inclusão de bônus racial. Ainda assim, a probabilidade
-de um candidato de escola particular ingressar foi 
+de um candidato de escola particular ingressar continua maior (
 `r round(with(subset(ep.ad, periodo=="Inclusp bônus PPI"), p.matr[1]/p.matr[2]),1)` 
-vezes maior do que de um candidato oriundo do ensino público entre 2014 e 2015.
+vezes em relação ao candidato do ensino público).
 
 
 ## Probabilidade de ingresso de candidatos PPI
@@ -236,7 +295,7 @@ vezes maior do que de um candidato oriundo do ensino público entre 2014 e 2015.
 ## Relacao candidato/vaga
 cor.cv <- select(cor, ano, cor, fase,n.fuvest) %>%
     spread(fase, n.fuvest) %>%
-    mutate(periodo=cut(ano, breaks=c(1999,2006,2013,2015),
+    mutate(periodo=cut(ano, breaks=c(1999,2006,2013,max(cor$ano)),
                        labels=c("Antes Inclusp", "Inclusp sem bônus PPI", "Inclusp bônus PPI"))) %>%
     group_by(periodo) %>%
     summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
@@ -245,7 +304,7 @@ cor.cv <- select(cor, ano, cor, fase,n.fuvest) %>%
 cor.ad <- filter(cor, cor!="NR"&cor!="amarela"&fase!="convocado") %>%
     select(ano:cor,n.fuvest,ppi) %>%
     spread(fase, n.fuvest) %>%
-    mutate(periodo=cut(ano, breaks=c(1999,2006,2013,2015),
+    mutate(periodo=cut(ano, breaks=c(1999,2006,2013,max(cor$ano)),
                        labels=c("Antes Inclusp", "Inclusp sem bônus PPI", "Inclusp bônus PPI"))) %>%
     group_by(periodo, ppi) %>%
     summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
@@ -261,7 +320,7 @@ candidatos PPI e brancos, nos três períodos. No período 2000-2007, anterior
 ingressar era `r round(with(subset(cor.ad, periodo=="Antes Inclusp"), p.matr[1]/p.matr[2]),1)`
 vezes maior do que de um candidato PPI. Novamente, a desigualdade se reduziu após
 a criação do INCLUSP, e ainda mais a partir da inclusão do bônus racial.
-Mesmo assim, a chance de um candidato branco ingressar em 2014-2015 foi 
+Mesmo assim, a chance de um candidato branco ingressar a partir de 2014 foi 
 `r round(with(subset(cor.ad, periodo=="Inclusp bônus PPI"), p.matr[1]/p.matr[2]),1)`
 vez maior do que de um candidato PPI.
 
@@ -286,19 +345,19 @@ p2 + geom_point(aes(colour=raca), size=4) +
 
 O gráfico a seguir mostra a proporção matriculados/ingressantes de candidatos PPI e brancos,
 dentro e fora do INCLUSP. A comparação foi feita entre os períodos em que
-programa não tinha bônus racial (2007-2013) e após a inclusão deste bônus (2014-2015).
+programa não tinha bônus racial (2007-2013) e após a inclusão deste bônus (a partir de 2014).
 
 ```{r comparacao racial com e sem inclusp}
 ## Relacao candidato/vaga
 incl.cv <- spread(incl, fase, N) %>%
-    mutate(periodo=cut(ano, breaks=c(2006,2013,2015), labels=c("Antes bônus PPI", "Após Bônus PPI"))) %>%
+    mutate(periodo=cut(ano, breaks=c(2006,2013,max(incl$ano)), labels=c("Antes bônus PPI", "Após Bônus PPI"))) %>%
     group_by(periodo) %>%
     summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
     mutate(p.matr = matr/inscr)
 ## Razao matriculados/inscritos
 incl.ad <- filter(incl, cor!="NR"&cor!="amarela") %>%
     spread(fase, N) %>%
-    mutate(periodo=cut(ano, breaks=c(2006,2013,2015), labels=c("Antes bônus PPI", "Após Bônus PPI"))) %>%
+    mutate(periodo=cut(ano, breaks=c(2006,2013,max(incl$ano)), labels=c("Antes bônus PPI", "Após Bônus PPI"))) %>%
     group_by(periodo, inclusp, ppi) %>%
     summarise(inscr=sum(inscrito), matr=sum(matriculado)) %>%
     mutate(p.matr = matr/inscr, raca = ifelse(ppi=="ppi","PPI", "Brancos"))
@@ -323,7 +382,14 @@ p1 + geom_point(aes(colour=raca), size=4) +
 Mesmo com o bônus, os candidatos INCLUSP tiveram menor probabilidade de ingresso. 
 Mais importante, a 
 desigualdade racial é maior no grupo de candidatos que aderiram ao
-INCLUSP. O bônus racial de 5% reduziu um pouco essa desigualdade, 
+INCLUSP. Antes do bônus racial no INCLUSP, candidatos que se declararam
+brancos tiveram uma chance de aprovação 
+`r round(with(subset(incl.ad, periodo=="Antes bônus PPI"&inclusp=="Inclusp"), p.matr[1]/p.matr[2]),1)`
+ vezes maior que os que se declararam PPI.
+O bônus racial reduziu um pouco essa desigualdade 
+(as chances dos brancos passaram a ser
+`r round(with(subset(incl.ad, periodo=="Após Bônus PPI"&inclusp=="Inclusp"), p.matr[1]/p.matr[2]),1)` 
+vezes maiores no INCLUSP), 
 mas os candidatos PPI oriundos de escola pública são ainda o grupo com menor
 probabilidade de ingresso. 
 
@@ -421,9 +487,7 @@ legend("topright", c("INCLUSP", "NÃO INCLUSP"), col=c("blue","red"), bty="n", l
 
 # Fonte de dados
 
-Os dados de raça declarada foram obtidos do site da FUVEST (http://www.fuvest.br/, seção "Estatísticas" > "Questionário de Avaliação Sócio-Econômica"), usando os agrupamentos "Total carreiras USP" e "Candidatos que optaram pelo Inclusp". 
-Os dados de onde os candidatos cursaram o ensino médio foram retirados do anuário da USP (https://uspdigital.usp.br/anuario/) 
-e do site da FUVEST.
+Os dados foram obtidos do site da FUVEST (http://www.fuvest.br/, seção "Estatísticas" > "Questionário de Avaliação Sócio-Econômica"), usando os agrupamentos "Total carreiras USP" e "Candidatos que optaram pelo Inclusp". 
 
 As planilhas, códigos R e fonte deste documento estão no repositório público https://github.com/piLaboratory/inclusp .
 Críticas e sugestões podem ser enviadas como [pull requests](https://github.com/piLaboratory/inclusp/pulls), [issues](https://github.com/piLaboratory/inclusp/issues) ou para <prado@ib.usp.br>.
@@ -436,3 +500,5 @@ Críticas e sugestões podem ser enviadas como [pull requests](https://github.co
 de São Paulo (36,7%). Segundo este mesmo censo a proporção de PPI na população brasileira é de 55,2%.
 
 [^4]: Ver linha do tempo na edição especial sobre inclusão do Jornal da USP : http://jornal.usp.br/especial/
+
+[^5]: O anuário da USP (https://uspdigital.usp.br/anuario/) seria uma fonte alternativa, mas não está claro se totalizará os inscritos e matriculados pela FUVEST e SISU. Além disso, os dados da pesquisa sócio-econômica ("características pessoais dos candidatos" no anuário) de 2014 e 2015 estão repetidos, indicando um possível erro de divulgação. Por fim, há outras difereças entre os números do anuário e da FUVEST em váriso anos anteriores a 2014. Até que estas questões sejam resolvidas me restringi aos dados disponibilizados pela FUVEST.
