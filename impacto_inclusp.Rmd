@@ -1,6 +1,6 @@
 ---
 title: "Cotas para escola pública na USP e inclusão racial - Subsídios para a Congregação do IBUSP"
-author: "Paulo Inácio Prado (Depto de Ecologia, IBUSP)"
+author: "Paulo Inácio Prado (Depto de Ecologia, IBUSP, prado@ib.usp.br)"
 date: "`r format(Sys.time(), '%d de %B de %Y')`"
 output:
   html_document:
@@ -28,6 +28,28 @@ knitr::opts_chunk$set(echo=FALSE)
 ```
 
 # Contextualização
+
+Desde 2016 as unidades unidades da USP podem destinar até 30% de suas vagas de graduação
+para o SiSU – Sistema de Seleção Unificada do Ministério da Educação [^6].
+Essas vagas podem ainda ser destinadas integral ou parcialmente a candidatos oriundos de escolas 
+públicas e a candidatos que se autodeclaram *pretos, pardos ou indígenas* (PPI). 
+
+Em julho de 2016 a Congregação do Instituto de Biociências aprovou que
+30% das vagas para o vestibular de sua graduação em Ciências Biológicas
+seriam preenchidas pelo SISU. Todas as vagas foram destinadas exclusivamente
+a candidatos que cursaram o ensino médio em escolas públicas. Além disso,
+um terço dessas vagas foram destinadas exclusivamente a candidatos que se
+declararem PPI.
+
+Preparei este documento em julho de 2016 primariamente para subsidiar 
+essa discussão em meu instituto.
+Desde então fiz pequenas correções e atualizações dos dados.
+Embora algumas análises estejam restritas ao IB,
+a maioria é sobre os dados de toda a USP. 
+Divulgo-as na expectativa que contribuam para um debate
+fundamentado sobre inclusão em nossa universidade.
+
+# As metas de inclusão da  USP
 
 Em 2013 a USP estabeleceu em seu  Plano Institucional [^1] as seguintes metas para 2018:
 
@@ -502,3 +524,5 @@ de São Paulo (36,7%). Segundo este mesmo censo a proporção de PPI na populaç
 [^4]: Ver linha do tempo na edição especial sobre inclusão do Jornal da USP : http://jornal.usp.br/especial/
 
 [^5]: O anuário da USP (https://uspdigital.usp.br/anuario/) seria uma fonte alternativa, mas não está claro se totalizará os inscritos e matriculados pela FUVEST e SISU. Além disso, os dados da pesquisa sócio-econômica ("características pessoais dos candidatos" no anuário) de 2014 e 2015 estão repetidos, indicando um possível erro de divulgação. Por fim, há outras difereças entre os números do anuário e da FUVEST em váriso anos anteriores a 2014. Até que estas questões sejam resolvidas me restringi aos dados disponibilizados pela FUVEST.
+
+[^6]: Normas e vagas no site da Pró-reitoria de Graduação da USP: http://www.prg.usp.br/?page_id=19592
