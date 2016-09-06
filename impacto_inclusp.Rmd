@@ -1,5 +1,5 @@
 ---
-title: "Cotas para escola pública na USP e inclusão racial - Subsídios para a Congregação do IBUSP"
+title: "Cotas para escola pública na USP e inclusão racial - Subsídios para discussão"
 author: "Paulo Inácio Prado (Depto de Ecologia, IBUSP, prado@ib.usp.br)"
 date: "`r format(Sys.time(), '%d de %B de %Y')`"
 output:
