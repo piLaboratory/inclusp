@@ -48,12 +48,13 @@ a candidatos que cursaram o ensino médio em escolas públicas. Além disso,
 um terço dessas vagas foram destinadas exclusivamente a candidatos que se
 declararem PPI.
 
-A primeira versão do documento é de junho de 2016. 
+A primeira versão do documento é de 22 de junho de 2016. 
 Desde então fiz pequenas correções e atualizações dos dados.
 Embora algumas análises estejam restritas ao IB,
 a maioria é sobre os dados de toda a USP. 
 Divulgo-as na expectativa que contribuam para um debate
 fundamentado sobre inclusão em nossa universidade.
+
 Um resumo das conclusões foi publicado em setembro de 2016 no
 Jornal da USP [^7].
 
@@ -531,7 +532,7 @@ de São Paulo (36,7%). Segundo este mesmo censo a proporção de PPI na populaç
 
 [^4]: Ver linha do tempo na edição especial sobre inclusão do Jornal da USP : http://jornal.usp.br/especial/
 
-[^5]: O anuário da USP (https://uspdigital.usp.br/anuario/) seria uma fonte alternativa, mas não está claro se totalizará os inscritos e matriculados pela FUVEST e SISU. Além disso, os dados da pesquisa sócio-econômica ("características pessoais dos candidatos" no anuário) de 2014 e 2015 estão repetidos, indicando um possível erro de divulgação. Por fim, há outras difereças entre os números do anuário e da FUVEST em váriso anos anteriores a 2014. Até que estas questões sejam resolvidas me restringi aos dados disponibilizados pela FUVEST.
+[^5]: O anuário da USP (https://uspdigital.usp.br/anuario/) seria uma fonte alternativa, mas não está claro se totaliza os inscritos e matriculados pela FUVEST e SISU. Além disso, os dados da pesquisa sócio-econômica ("características pessoais dos candidatos" no anuário) de 2014 e 2015 estão repetidos, indicando um possível erro de divulgação. Por fim, há outras diferenças entre os números do anuário e da FUVEST em váriso anos anteriores a 2014. Até que essas questões sejam resolvidas me restringi aos dados disponibilizados pela FUVEST.
 
 [^6]: Normas e vagas no site da Pró-reitoria de Graduação da USP: http://www.prg.usp.br/?page_id=19592
 
