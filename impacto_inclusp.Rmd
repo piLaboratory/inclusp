@@ -29,25 +29,33 @@ knitr::opts_chunk$set(echo=FALSE)
 
 # Contextualização
 
+Este documento é resultado do debate sobre cotas raciais que ocorreu em
+minha unidade, no âmbito da greve estudantil de 2016. Sou imensamente
+grato aos estudantes e colegas do IB que nesse processo pautaram sua
+ação no diálogo, respeito à divergência de ideias e no debate
+fundamentado. Foi a atitude universitária dessas pessoas que me
+estimulou a contribuir com as análises aqui apresentadas.
+ 
 Desde 2016 as unidades unidades da USP podem destinar até 30% de suas vagas de graduação
 para o SiSU – Sistema de Seleção Unificada do Ministério da Educação [^6].
 Essas vagas podem ainda ser destinadas integral ou parcialmente a candidatos oriundos de escolas 
 públicas e a candidatos que se autodeclaram *pretos, pardos ou indígenas* (PPI). 
 
-Em julho de 2016 a Congregação do Instituto de Biociências aprovou que
+Em junho de 2016 a Congregação do Instituto de Biociências aprovou que
 30% das vagas para o vestibular de sua graduação em Ciências Biológicas
 seriam preenchidas pelo SISU. Todas as vagas foram destinadas exclusivamente
 a candidatos que cursaram o ensino médio em escolas públicas. Além disso,
 um terço dessas vagas foram destinadas exclusivamente a candidatos que se
 declararem PPI.
 
-Preparei este documento em julho de 2016 primariamente para subsidiar 
-essa discussão em meu instituto.
+A primeira versão do documento é de junho de 2016. 
 Desde então fiz pequenas correções e atualizações dos dados.
 Embora algumas análises estejam restritas ao IB,
 a maioria é sobre os dados de toda a USP. 
 Divulgo-as na expectativa que contribuam para um debate
 fundamentado sobre inclusão em nossa universidade.
+Um resumo das conclusões foi publicado em setembro de 2016 no
+Jornal da USP [^7].
 
 # As metas de inclusão da  USP
 
@@ -526,3 +534,6 @@ de São Paulo (36,7%). Segundo este mesmo censo a proporção de PPI na populaç
 [^5]: O anuário da USP (https://uspdigital.usp.br/anuario/) seria uma fonte alternativa, mas não está claro se totalizará os inscritos e matriculados pela FUVEST e SISU. Além disso, os dados da pesquisa sócio-econômica ("características pessoais dos candidatos" no anuário) de 2014 e 2015 estão repetidos, indicando um possível erro de divulgação. Por fim, há outras difereças entre os números do anuário e da FUVEST em váriso anos anteriores a 2014. Até que estas questões sejam resolvidas me restringi aos dados disponibilizados pela FUVEST.
 
 [^6]: Normas e vagas no site da Pró-reitoria de Graduação da USP: http://www.prg.usp.br/?page_id=19592
+
+[^7]: Cotas raciais não promovem inclusão racial, por Paulo Inácio
+    Prado. Jornal da USP, 23/09/2016. http://jornal.usp.br/artigos/cotas-sociais-nao-promovem-inclusao-racial/
