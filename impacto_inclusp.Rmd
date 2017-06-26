@@ -283,7 +283,7 @@ todas as proporções deveriam convergir para os valores da razão candidato/vag
 ##
 ## Estes codigos usam os dados FUVEST
 ## Usar até que USP corrija dados do anuario
-## TODO: criar uma unica lanilha com dados FUVEST e anuario, como ja feito para cor
+## TODO: criar uma unica planilha com dados FUVEST e anuario, como ja feito para cor
 ep.cv <-  mutate(epf, periodo=cut(ano, breaks=c(1999,2006,2013,max(epf$ano)),
                         labels=c("Antes Inclusp", "Inclusp sem bônus PPI", "Inclusp bônus PPI"))) %>%
     group_by(periodo, fase) %>%
@@ -300,8 +300,8 @@ ep.ad <-
     mutate(p.matr = matriculado/inscrito, medio=ifelse(var=="n.pub", "Escola Pública", "Escola Particular")) %>%
     select(periodo, medio, inscrito:p.matr)
 ## Adiciona intervalos de confiança
-ep.ad$ic.low <- binconf(ep.ad$matr, ep.ad$inscr, method="exact")[,2]
-ep.ad$ic.up <- binconf(ep.ad$matr, ep.ad$inscr, method="exact")[,3]
+ep.ad$ic.low <- binconf(ep.ad$matriculado, ep.ad$inscrito, method="exact")[,2]
+ep.ad$ic.up <- binconf(ep.ad$matriculado, ep.ad$inscrito, method="exact")[,3]
 ## Grafico
 p3 <- ggplot(ep.ad, aes(periodo, p.matr))
 p3 + geom_point(aes(colour=medio), size=4) +
@@ -525,11 +525,38 @@ legend("topright", c("INCLUSP", "NÃO INCLUSP"), col=c("blue","red"), bty="n", l
 
 # Fonte de dados
 
-Os dados foram obtidos do site da FUVEST (http://www.fuvest.br/, seção "Estatísticas" > "Questionário de Avaliação Sócio-Econômica"), usando os agrupamentos "Total carreiras USP" e "Candidatos que optaram pelo Inclusp". 
+Os dados foram obtidos do site da FUVEST (http://www.fuvest.br/, seção "Estatísticas" > "Questionário de Avaliação Sócio-Econômica"), usando os agrupamentos "Total carreiras USP" e "Candidatos que optaram pelo Inclusp". Compilei também, dados dos anuários da USP, embora não tenha usado nessas análises (ver notas, abaixo).
 
 As planilhas, códigos R e fonte deste documento estão no repositório público https://github.com/piLaboratory/inclusp .
 Críticas e sugestões podem ser enviadas como [pull requests](https://github.com/piLaboratory/inclusp/pulls), [issues](https://github.com/piLaboratory/inclusp/issues) ou para <prado@ib.usp.br>.
 
+## Lista das planilhas compiladas
+
+### USP
+
+* Número de inscritos, convocados e matriculados, por origem escolar
+  (escola pública, particular, etc). Dados do anuário da USP, 1987-2015 :
+  [ensino_medio.csv](ensino_medio.csv)
+* Número de inscritos e matriculados, por origem escolar
+  (escola pública, particular, etc). Dados do anuário da FUVEST, 2000-2016 :
+  [ensino_medio_fuvest.csv](ensino_medio_fuvest.csv)
+* Número de inscritos e matriculados, por adesão ao INCLUSP e 
+  cor autodeclarada. Dados da FUVEST, 2007-2016 :
+  [inclusp.csv](inclusp.csv)
+* Número de inscritos e matriculados por adesão ao INCLUSP e faixas de
+  renda familiar. Dados FUVEST, 2015-2016: [inclusp_renda.csv](inclusp_renda.csv)
+* Número de inscritos, convocados e matriculados, por cor
+  autodeclarada, dados do anuário da USP e da Fuvest, 2000 - 20016:
+  [cor.csv](cor.csv)
+
+### IB
+* Número de inscritos, convocados e matriculados, por cor
+  autodeclarada, dados do anuário da USP e da Fuvest, 2000 - 20016:
+  [corIB.csv](corIB.csv)
+* Número de inscritos, convocados e matriculados, por origem escolar
+  (escola pública, particular, etc). Dados do anuário da USP, 1987-2015 :
+  [corIB.csv](ensino_medioIB.csv)
+  
 [^1]: RESOLUÇÃO Nº 6583, DE 4 DE JULHO DE 2013, http://www.leginf.usp.br/?resolucao=resolucao-no-6583-de-4-de-julho-de-2013
 
 [^2]: Os dados divulgados não permitem cruzar diretamente a pergunta sobre raça e onde cursou o ensino médio. No entanto, estão disponíveis os dados sobre raça dos optantes pelo Inclusp. Para optar pelo Inclusp é preciso ter cursado o ensino médio integralmente em escola pública. É possível que alguns candidatos com este perfil não tenham se inscrito no Inclusp, mas dadas as vantagens de se inscrever isso não deve alterar muito os resultados. Por exemplo, no vestibular de 2015 todos que responderam ter cursado o ensino médio em escola pública optaram pelo Inclusp.
